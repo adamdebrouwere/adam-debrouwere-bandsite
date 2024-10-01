@@ -1,1 +1,33 @@
-/*# sourceMappingURL=bio.css.map */
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+b {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+footer {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}/*# sourceMappingURL=bio.css.map */
