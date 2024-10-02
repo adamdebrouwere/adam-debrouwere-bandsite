@@ -1,6 +1,25 @@
 @use './mixin' as *;
 @use './variables' as *;
+
+
 //constants
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+
+body {
+    font-family: "Avenir", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
 ul {
     list-style-type: none;
 }
