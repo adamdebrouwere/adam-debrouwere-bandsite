@@ -120,16 +120,14 @@ footer {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
+  justify-content: start;
   align-items: center;
 }
 .hero__img {
   width: 100%;
-  height: 100%;
+  height: 58vw;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
 }
 .hero__overlay {
   width: 100%;
@@ -144,9 +142,9 @@ footer {
   color: white;
   text-align: center;
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   z-index: 2;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .about {
