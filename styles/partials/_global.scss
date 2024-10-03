@@ -1,4 +1,4 @@
-@use "./mixin" as *;
+@use "./mixins" as *;
 @use "./variables" as *;
 @use "./typography" as *;
 
@@ -9,12 +9,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 14px;
 }
 
 body {
     width: 100vw;
     font-family: "Avenir", sans-serif;
+    // letter-spacing: $spacing;
+    // line-height: $line-height;
 }
 
 a {
@@ -35,10 +36,8 @@ ul {
     padding: 1rem 0 0 0;
   }
   &__header {
-        padding: 1rem;
         text-align: center;
-        font-weight: 400;
-        font-size: 2.5rem;
+        font-weight: 500;
     }
 
 
@@ -48,79 +47,81 @@ ul {
   }
   
   &__list-item {
-    padding: 1rem;
+    padding: .75rem;
     width: 100%;
     text-align: center;
+    font-size: .875rem;
     cursor: pointer;
-    font-weight: 600;
+    
   
         &:hover {
             color: lighten($color-white, 10%);
         }
         &--active {
-            border-bottom: .3rem solid $color-white
+            border-bottom: .3rem solid $color-white;
+            font-weight: 600;
         }
     }
 }
 //desktop and tables text styles
 // h1 {
-//     font-size: 60px;
-//     line-height: 68px;
+//     font-size: 3.75rem;
+//     line-height: 4.25rem;
 //     font-weight: 700;
 // }
 
 // h2 {
-//     font-size: 36px;
-//     line-height: 44px;
+//     font-size: 2.25rem;
+//     line-height: 2.75rem;
 //     font-weight: 700;
 // }
 
 // h3 {
-//     font-size: 24px;
-//     line-height: 44px;
+//     font-size: 1.5rem;
+//     line-height: 2.75rem;
 //     font-weight: 600;
 // }
 
 // b {
-//     font-size: 14px;
-//     line-height: 22px;
+//     font-size: .875rem;
+//     line-height: 1.375rem;
 //     font-weight: 400;
 // }
 
 // footer {
-//     font-size: 14px;
-//     line-height: 22px;
+//     font-size: .875rem;
+//     line-height: 1.375rem;
 //     font-weight: 400;
 // }
 
 // mobile text styles
 
 h1 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: .875rem;
+  line-height: 1.375rem;
   font-weight: 600;
 }
 
 b {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: .8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
 
 footer {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: .8125rem;
+  line-height: 1.125rem;
   font-weight: 400;
 }
