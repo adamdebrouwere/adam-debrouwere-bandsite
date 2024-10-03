@@ -216,4 +216,54 @@ footer {
 .gallery__img {
   width: 100%;
   padding: 0.5rem 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 1rem;
+  background-color: #323232;
+  color: #ffffff;
+}
+.footer__header {
+  padding: 1rem 0rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.footer__logo-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  width: 50%;
+  padding: 0.5rem 0;
+}
+.footer__logo-list-item-img {
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.footer-booking {
+  padding: 0.5rem 0 0.25rem;
+  font-size: 0.875rem;
+}
+.footer-booking__agent {
+  font-weight: 600;
+  padding: 0.5rem 0 0.25rem;
+}
+.footer-booking__address {
+  padding: 1rem 0;
+}
+.footer-booking__email {
+  padding: 0.25rem 0;
+}
+.footer-banner {
+  padding: 2rem 0 0.5rem;
+}
+.footer-banner__title {
+  font-weight: 400;
+}
+.footer__copyright {
+  font-size: 0.6875rem;
 }/*# sourceMappingURL=bio.css.map */
