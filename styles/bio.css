@@ -190,4 +190,30 @@ footer {
 .about__container-text {
   flex: 1;
   font-size: 0.8125rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 0.5rem 1rem;
+  background-color: #fafafa;
+}
+.gallery__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gallery__header {
+  padding: 1rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.gallery__img {
+  width: 100%;
+  padding: 0.5rem 0;
 }/*# sourceMappingURL=bio.css.map */
