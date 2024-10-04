@@ -65,7 +65,7 @@
 
   &__container {
     @include flex-center(column, center, start);
-    
+
     @include tablet {
       padding: 2vw 7vw;
     }
@@ -78,8 +78,8 @@
     object-position: bottom;
 
     @include tablet {
-        height: 43vw;
-        object-position: center;
+      height: 43vw;
+      object-position: center;
     }
   }
 
@@ -91,8 +91,8 @@
     flex: 1;
 
     @include tablet {
-        font-size: 3vw;
-        line-height: 4vw;
+      font-size: 3vw;
+      line-height: 4vw;
     }
 
     &-author {
@@ -110,11 +110,11 @@
   &__name {
     padding: 1vw 0;
     font-size: 0.875rem;
-    
+
     @include tablet {
-        font-weight: 600;
-        font-size: 3vw;
-        padding: 2vw 0;
+      font-weight: 600;
+      font-size: 3vw;
+      padding: 2vw 0;
     }
   }
 
@@ -123,10 +123,9 @@
     flex-wrap: wrap;
 
     @include tablet {
-        width: 100%;
-        @include flex-center(row, space-between);
-        gap: 5vw;
-
+      width: 100%;
+      @include flex-center(row, space-between);
+      gap: 5vw;
     }
   }
 
@@ -136,8 +135,8 @@
     flex: 1;
 
     @include tablet {
-        font-size: 2vw;
-        line-height: 3vw;
+      font-size: 2vw;
+      line-height: 3vw;
     }
   }
 }
@@ -147,26 +146,39 @@
   padding: 2vw 4vw;
   background-color: $color-alabaster;
 
+    @include tablet {
+        padding: 3vw 4vw;
+    }
+
   &__container {
     width: 100%;
     height: 100%;
     @include flex-center(column);
 
     @include tablet {
-        @include flex-center(row);
-        flex-wrap: wrap;
+      @include flex-center(row, space-between, start);
+      flex-wrap: wrap;
     }
   }
 
   &__header {
     padding: 5vw 0 2.5vw;
-    font-size: 7.5vw;
+    font-size: 7vw;
     font-weight: 600;
+
+    @include tablet {
+        font-size: 5vw;
+    }
   }
 
   &__img {
     width: 100%;
     padding: 2vw 0;
+
+    @include tablet {
+      width: 31%;
+      padding: 2vw 0;
+    }
   }
 }
 
