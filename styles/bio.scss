@@ -60,6 +60,7 @@
 
     @include tablet {
       font-size: 5.5vw;
+      color: $color-bandSite-black
     }
   }
 
@@ -148,6 +149,7 @@
 
     @include tablet {
         padding: 3vw 4vw;
+        color: $color-bandSite-black
     }
 
   &__container {
@@ -187,11 +189,38 @@
   padding: 1rem;
   background-color: $color-bandSite-black;
   color: $color-white;
+  position: relative;
+  
+  @include tablet {
+    padding: 4vw 5vw;
+  }
+
+  &__container {
+      width: 100%;
+      @include flex-center(column, start, space-between);
+
+      @include tablet {
+        &-top {
+          width: 100%;
+          @include flex-center(row, flex-start)
+        }
+
+        &-middle {
+          width: 100%;
+          @include flex-center(row, space-between)
+        }
+      }
+    }
+    
 
   &__header {
     padding: 1rem 0rem;
-    font-size: 7vw;
+    font-size: 5vw;
     font-weight: 600;
+
+    @include tablet {
+      font-size: 5vw;
+    }
   }
 
   &__logo-list {
@@ -199,16 +228,29 @@
     width: 50%;
     padding: 0.5rem 0;
 
+    @include tablet {
+      @include flex-center(row, space-between, baseline)
+    }
+
+    @include tablet {
+      width: 25%;
+      padding-left: 4vw;
+    }
+
     &-item-img {
-      width: 1.875rem;
-      height: 1.875rem;
+      width: 3.5vw;
+      height: 4vw;
     }
   }
 
+  
   &-booking {
     padding: 0.5rem 0 0.25rem;
     font-size: 0.875rem;
-
+    @include tablet {
+      font-size: 2vw;
+    }
+    
     &__agent {
       font-weight: 600;
       padding: 0.5rem 0 0.25rem;
@@ -221,14 +263,30 @@
     }
   }
 
-  &-banner {
+  &__watermark {
     padding: 2rem 0 0.5rem;
-    &__title {
+    
+    @include tablet {
+      position: absolute;
+      top: 2rem;
+      right: 4rem;
+    }
+    
+    &-title {
       font-weight: 400;
+      @include tablet {
+        font-size: 3vw;
+        font-weight: 300;
+      }
     }
   }
 
   &__copyright {
     font-size: 0.6875rem;
+
+    @include tablet {
+      font-size: 2vw ;
+      padding: 7vw 0 0;
+    }
   }
 }

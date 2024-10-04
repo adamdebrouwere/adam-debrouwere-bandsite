@@ -251,6 +251,7 @@ ul {
 @media (min-width: 48rem) {
   .about__header {
     font-size: 5.5vw;
+    color: #323232;
   }
 }
 .about__container {
@@ -351,6 +352,7 @@ ul {
 @media (min-width: 48rem) {
   .gallery {
     padding: 3vw 4vw;
+    color: #323232;
   }
 }
 .gallery__container {
@@ -399,11 +401,45 @@ ul {
   padding: 1rem;
   background-color: #323232;
   color: #ffffff;
+  position: relative;
+}
+@media (min-width: 48rem) {
+  .footer {
+    padding: 4vw 5vw;
+  }
+}
+.footer__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: space-between;
+}
+@media (min-width: 48rem) {
+  .footer__container-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .footer__container-middle {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .footer__header {
   padding: 1rem 0rem;
-  font-size: 7vw;
+  font-size: 5vw;
   font-weight: 600;
+}
+@media (min-width: 48rem) {
+  .footer__header {
+    font-size: 5vw;
+  }
 }
 .footer__logo-list {
   display: flex;
@@ -413,13 +449,32 @@ ul {
   width: 50%;
   padding: 0.5rem 0;
 }
+@media (min-width: 48rem) {
+  .footer__logo-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+@media (min-width: 48rem) {
+  .footer__logo-list {
+    width: 25%;
+    padding-left: 4vw;
+  }
+}
 .footer__logo-list-item-img {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 3.5vw;
+  height: 4vw;
 }
 .footer-booking {
   padding: 0.5rem 0 0.25rem;
   font-size: 0.875rem;
+}
+@media (min-width: 48rem) {
+  .footer-booking {
+    font-size: 2vw;
+  }
 }
 .footer-booking__agent {
   font-weight: 600;
@@ -431,12 +486,31 @@ ul {
 .footer-booking__email {
   padding: 0.25rem 0;
 }
-.footer-banner {
+.footer__watermark {
   padding: 2rem 0 0.5rem;
 }
-.footer-banner__title {
+@media (min-width: 48rem) {
+  .footer__watermark {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+  }
+}
+.footer__watermark-title {
   font-weight: 400;
+}
+@media (min-width: 48rem) {
+  .footer__watermark-title {
+    font-size: 3vw;
+    font-weight: 300;
+  }
 }
 .footer__copyright {
   font-size: 0.6875rem;
+}
+@media (min-width: 48rem) {
+  .footer__copyright {
+    font-size: 2vw;
+    padding: 7vw 0 0;
+  }
 }/*# sourceMappingURL=bio.css.map */
