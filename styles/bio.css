@@ -118,7 +118,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0 0 0;
+  padding: 1vw 0 0 0;
 }
 @media (min-width: 48rem) {
   .navbar__container {
@@ -134,12 +134,14 @@ ul {
 .navbar__header {
   text-align: center;
   font-weight: 500;
+  font-size: 6vw;
+  padding: 4vw 0 2vw;
 }
 @media (min-width: 48rem) {
   .navbar__header {
     font-weight: 400;
-    font-size: 1.75rem;
-    padding: 0 0 0 2rem;
+    font-size: 4vw;
+    padding: 0 4vw;
   }
 }
 .navbar__list {
@@ -148,7 +150,6 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 30%;
 }
 @media (min-width: 48rem) {
   .navbar__list {
@@ -160,9 +161,9 @@ ul {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 4vw;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 1vw 0;
 }
 @media (min-width: 48rem) {
   .navbar__list-item {
@@ -170,7 +171,7 @@ ul {
     justify-self: center;
     align-content: center;
     font-size: 1.7vw;
-    padding: 0rem 2rem;
+    padding: 0 2vw;
   }
 }
 .navbar__list-item:hover {
@@ -206,6 +207,12 @@ ul {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (min-width: 48rem) {
+  .hero__img {
+    -o-object-position: bottom;
+       object-position: bottom;
+  }
+}
 .hero__overlay {
   width: 100%;
   height: 100%;
@@ -219,9 +226,14 @@ ul {
   color: white;
   text-align: center;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 7.8vw;
   z-index: 2;
   padding: 1rem;
+}
+@media (min-width: 48rem) {
+  .hero__header {
+    padding: 5vw;
+  }
 }
 
 .about {
@@ -233,7 +245,7 @@ ul {
 }
 .about__header {
   padding: 0.5rem 0;
-  font-size: 1.5rem;
+  font-size: 7vw;
   font-weight: 600;
 }
 .about__img {
@@ -287,7 +299,7 @@ ul {
 }
 .gallery__header {
   padding: 1rem 0 0;
-  font-size: 1.5rem;
+  font-size: 7.5vw;
   font-weight: 600;
 }
 .gallery__img {
@@ -306,7 +318,7 @@ ul {
 }
 .footer__header {
   padding: 1rem 0rem;
-  font-size: 1.8rem;
+  font-size: 7vw;
   font-weight: 600;
 }
 .footer__logo-list {
