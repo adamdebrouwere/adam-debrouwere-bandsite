@@ -210,8 +210,8 @@
   }
 
   &__header {
-    padding: 1.5rem 1rem 1.5rem;
-    font-size: 2.5rem;
+    padding: 1rem 0;
+    font-size: 1.6875rem;
     font-weight: 600;
 
     @include tablet {
@@ -281,7 +281,8 @@
     font-weight: 600;
 
     @include tablet {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      padding: 1rem 0
     }
   }
 
@@ -292,8 +293,8 @@
 
     @include tablet {
       @include flex-center(row, space-between, baseline);
-      width: 25%;
-      padding-left: 2rem;
+      width: 20%;
+      padding-left: 3rem;
     }
 
     @include desktop {
@@ -304,7 +305,7 @@
       width: 1.5rem;
       height: 1.5rem;
 
-      @include desktop {
+      @include tablet {
         width: 1.75rem;
         height: 1.75rem;
       }
@@ -316,13 +317,11 @@
     font-size: 0.875rem;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
     @include desktop {
       padding: 0 3rem 0 0;
     }
-
-
 
     &-agent {
       font-weight: 600;
@@ -363,7 +362,7 @@
       font-weight: 400;
 
       @include tablet {
-        font-size: 3.8vw;
+        font-size: 2rem;
         font-weight: 300;
       }
 
@@ -377,13 +376,12 @@
     font-size: 0.6875rem;
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 1.25rem;
       padding: 3rem 0 0;
     }
 
     @include desktop {
-      font-size: 1rem;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem;
     }
   }
 }
