@@ -70,6 +70,10 @@
     padding: 2rem;
   }
 
+  @include desktop {
+    padding: 2rem 10%;
+  }
+
   &__header {
     padding: 0.5rem 0;
     font-size: 1.5rem;
@@ -87,6 +91,10 @@
     @include tablet {
       padding: 1rem 3.5rem;
     }
+
+    @include desktop {
+      padding: 0 6rem;
+    }
   }
 
   &__img {
@@ -98,6 +106,10 @@
     @include tablet {
       height: 43vw;
       object-position: center;
+    }
+    @include desktop {
+      height: 36vw;
+      padding-top: 1rem;
     }
   }
 
@@ -111,6 +123,9 @@
       padding: 2rem 0 0;
       font-size: 1.375rem;
       line-height: 2rem;
+    }
+    @include desktop {
+      width: 70%;
     }
 
     &-author {
@@ -147,6 +162,10 @@
       @include flex-center(row, space-between, flex-start);
       gap: 2rem;
     }
+
+    @include desktop {
+      gap: 3rem;
+    }
   }
 
   &__text {
@@ -158,6 +177,10 @@
       font-size: 1rem;
       line-height: 2rem;
       flex: 1;
+    }
+
+    @include desktop {
+      line-height: 1.5rem;
     }
   }
 }

@@ -287,6 +287,11 @@ ul {
     padding: 2rem;
   }
 }
+@media (min-width: 80rem) {
+  .about {
+    padding: 2rem 10%;
+  }
+}
 .about__header {
   padding: 0.5rem 0;
   font-size: 1.5rem;
@@ -309,6 +314,11 @@ ul {
     padding: 1rem 3.5rem;
   }
 }
+@media (min-width: 80rem) {
+  .about__container {
+    padding: 0 6rem;
+  }
+}
 .about__img {
   width: 100%;
   height: 48vw;
@@ -324,6 +334,12 @@ ul {
        object-position: center;
   }
 }
+@media (min-width: 80rem) {
+  .about__img {
+    height: 36vw;
+    padding-top: 1rem;
+  }
+}
 .about__quote {
   padding: 1.5rem 0 0;
   font-weight: 600;
@@ -335,6 +351,11 @@ ul {
     padding: 2rem 0 0;
     font-size: 1.375rem;
     line-height: 2rem;
+  }
+}
+@media (min-width: 80rem) {
+  .about__quote {
+    width: 70%;
   }
 }
 .about__quote-author {
@@ -374,6 +395,11 @@ ul {
     gap: 2rem;
   }
 }
+@media (min-width: 80rem) {
+  .about__text-container {
+    gap: 3rem;
+  }
+}
 .about__text {
   font-size: 0.8125rem;
   line-height: 1.25rem;
@@ -384,6 +410,11 @@ ul {
     font-size: 1rem;
     line-height: 2rem;
     flex: 1;
+  }
+}
+@media (min-width: 80rem) {
+  .about__text {
+    line-height: 1.5rem;
   }
 }
 
