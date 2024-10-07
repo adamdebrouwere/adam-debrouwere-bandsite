@@ -432,6 +432,11 @@ ul {
     color: #323232;
   }
 }
+@media (min-width: 80rem) {
+  .gallery {
+    padding: 2rem 10%;
+  }
+}
 .gallery__container {
   width: 100%;
   height: 100%;
@@ -458,6 +463,11 @@ ul {
   .gallery__header {
     font-size: 2.5rem;
     padding: 1rem 0;
+  }
+}
+@media (min-width: 80rem) {
+  .gallery__header {
+    padding: 1rem 0 2rem;
   }
 }
 .gallery__img {
