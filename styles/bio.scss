@@ -81,7 +81,7 @@
 
     @include tablet {
       font-size: 2.25rem;
-      color: $color-bandSite-black
+      color: $color-bandSite-black;
     }
   }
 
@@ -149,7 +149,6 @@
       padding: 2rem 0 1rem;
       font-weight: 600;
       font-size: 1.75rem;
-      
     }
   }
 
@@ -187,18 +186,17 @@
 
 .gallery {
   @include flex-center(column, center, start);
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0.5rem;
   background-color: $color-alabaster;
 
-    @include tablet {
-        padding: 2rem 2rem 1.5rem;
-        color: $color-bandSite-black
-    }
+  @include tablet {
+    padding: 2rem 2rem 1.5rem;
+    color: $color-bandSite-black;
+  }
 
-    @include desktop {
-      padding: 2rem 10%;
-    }
-
+  @include desktop {
+    padding: 2rem 10%;
+  }
 
   &__container {
     width: 100%;
@@ -212,13 +210,13 @@
   }
 
   &__header {
-    padding: 1.5rem  1rem 1.5rem;
+    padding: 1.5rem 1rem 1.5rem;
     font-size: 2.5rem;
     font-weight: 600;
 
     @include tablet {
-        font-size: 2.5rem;
-        padding: 1rem 0;
+      font-size: 2.5rem;
+      padding: 1rem 0;
     }
 
     @include desktop {
@@ -228,11 +226,11 @@
 
   &__img {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem 0;
 
     @include tablet {
       width: 31%;
-      padding: .75rem 0;
+      padding: 0.75rem 0;
     }
   }
 }
@@ -243,28 +241,39 @@
   background-color: $color-bandSite-black;
   color: $color-white;
   position: relative;
-  
+
   @include tablet {
     padding: 2.5rem;
   }
 
+  @include desktop {
+    padding: 3rem 8rem 1rem;
+  }
+
   &__container {
-      width: 100%;
-      @include flex-center(column, start, space-between);
+    width: 100%;
+    @include flex-center(column, start, space-between);
 
-      @include tablet {
-        &-top {
-          width: 100%;
-          @include flex-center(row, flex-start)
+    @include tablet {
+      &-top {
+        width: 100%;
+        @include flex-center(row, flex-start);
+
+        @include desktop {
+          padding: 0 0 1rem;
         }
+      }
 
-        &-middle {
-          width: 100%;
-          @include flex-center(row, space-between)
+      &-middle {
+        width: 100%;
+        @include flex-center(row, space-between);
+
+        @include desktop {
+          @include flex-center(row, flex-start);
         }
       }
     }
-    
+  }
 
   &__header {
     padding: 0.5rem 0rem;
@@ -281,28 +290,41 @@
     width: 90%;
     padding: 0.5rem 0;
 
-    @include tablet { 
+    @include tablet {
       @include flex-center(row, space-between, baseline);
       width: 25%;
       padding-left: 2rem;
     }
 
+    @include desktop {
+      width: 15%;
+    }
+
     &-img {
       width: 1.5rem;
-      height: 1.5rem
+      height: 1.5rem;
+
+      @include desktop {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
     }
   }
 
-  
-  &-booking {
+  &__booking {
     padding: 0.5rem 0 0.25rem;
     font-size: 0.875rem;
-    
+
     @include tablet {
       font-size: 1rem;
     }
-    
-    &__agent {
+    @include desktop {
+      padding: 0 3rem 0 0;
+    }
+
+
+
+    &-agent {
       font-weight: 600;
       padding: 0.5rem 0 0.25rem;
 
@@ -310,32 +332,43 @@
         padding: 1rem 0;
       }
     }
-    &__address {
+    &-address {
       padding: 1rem 0;
 
       @include tablet {
         padding: 1rem 0 2rem;
       }
     }
-    &__email {
+    &-email {
       padding: 0.25rem 0;
     }
   }
 
   &__watermark {
     padding: 2rem 0 0.5rem;
-    
+
     @include tablet {
       position: absolute;
       top: 1rem;
       right: 3rem;
     }
-    
+
+    @include desktop {
+      position: absolute;
+      top: 1rem;
+      right: 12rem;
+    }
+
     &-title {
       font-weight: 400;
+
       @include tablet {
         font-size: 3.8vw;
         font-weight: 300;
+      }
+
+      @include desktop {
+        font-size: 1.5rem;
       }
     }
   }
@@ -344,8 +377,13 @@
     font-size: 0.6875rem;
 
     @include tablet {
-      font-size: 2vw ;
-      padding: 7vw 0 0;
+      font-size: 1rem;
+      padding: 3rem 0 0;
+    }
+
+    @include desktop {
+      font-size: 1rem;
+      padding: 2rem 0;
     }
   }
 }
