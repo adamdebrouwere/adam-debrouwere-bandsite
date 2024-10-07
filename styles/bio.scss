@@ -1,0 +1,387 @@
+@use "./partials/global" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @include flex-center(row, start);
+
+    @include desktop {
+      height: 50vw;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 58vw;
+    object-fit: cover;
+
+    @include tablet {
+      object-position: bottom;
+    }
+
+    @include desktop {
+      object-position: top;
+    }
+  }
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    background-color: $color-bandSite-black--overlay;
+    z-index: 1;
+  }
+
+  &__header {
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 7.8vw;
+    z-index: 2;
+    padding: 1rem;
+
+    @include tablet {
+      padding: 5vw;
+    }
+
+    @include desktop {
+      font-size: 4.5vw;
+      padding: 10vw;
+    }
+  }
+}
+
+.about {
+  @include flex-center(column, center, start);
+  padding: 1rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 2rem 10%;
+  }
+
+  &__header {
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 2.25rem;
+      color: $color-bandSite-black;
+    }
+  }
+
+  &__container {
+    @include flex-center(column, center, start);
+
+    @include tablet {
+      padding: 1rem 3.5rem;
+    }
+
+    @include desktop {
+      padding: 0 6rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 48vw;
+    object-fit: cover;
+    object-position: bottom;
+
+    @include tablet {
+      height: 43vw;
+      object-position: center;
+    }
+    @include desktop {
+      height: 36vw;
+      padding-top: 1rem;
+    }
+  }
+
+  &__quote {
+    padding: 1.5rem 0 0;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+
+    @include tablet {
+      padding: 2rem 0 0;
+      font-size: 1.375rem;
+      line-height: 2rem;
+    }
+    @include desktop {
+      width: 70%;
+    }
+
+    &-author {
+      padding: 0.5rem 0;
+      font-weight: 600;
+      font-size: 0.875rem;
+
+      @include tablet {
+        padding: 1rem 0 2rem;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &__name {
+    padding: 1.25rem 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    @include tablet {
+      padding: 2rem 0 1rem;
+      font-weight: 600;
+      font-size: 1.75rem;
+    }
+  }
+
+  &__text-container {
+    width: 96%;
+    flex-wrap: wrap;
+
+    @include tablet {
+      width: 100%;
+      @include flex-center(row, space-between, flex-start);
+      gap: 2rem;
+    }
+
+    @include desktop {
+      gap: 3rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 2rem;
+      flex: 1;
+    }
+
+    @include desktop {
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.gallery {
+  @include flex-center(column, center, start);
+  padding: 2rem 1rem 0.5rem;
+  background-color: $color-alabaster;
+
+  @include tablet {
+    padding: 2rem 2rem 1.5rem;
+    color: $color-bandSite-black;
+  }
+
+  @include desktop {
+    padding: 2rem 10%;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    @include flex-center(column);
+
+    @include tablet {
+      @include flex-center(row, space-between, start);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__header {
+    padding: 1rem 0;
+    font-size: 1.6875rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 2.5rem;
+      padding: 1rem 0;
+    }
+
+    @include desktop {
+      padding: 1rem 0 2rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      width: 31%;
+      padding: 0.75rem 0;
+    }
+  }
+}
+
+.footer {
+  @include flex-center(column, center, start);
+  padding: 1rem;
+  background-color: $color-bandSite-black;
+  color: $color-white;
+  position: relative;
+
+  @include tablet {
+    padding: 2.5rem;
+  }
+
+  @include desktop {
+    padding: 3rem 8rem 1rem;
+  }
+
+  &__container {
+    width: 100%;
+    @include flex-center(column, start, space-between);
+
+    @include tablet {
+      &-top {
+        width: 100%;
+        @include flex-center(row, flex-start);
+
+        @include desktop {
+          padding: 0 0 1rem;
+        }
+      }
+
+      &-middle {
+        width: 100%;
+        @include flex-center(row, space-between);
+
+        @include desktop {
+          @include flex-center(row, flex-start);
+        }
+      }
+    }
+  }
+
+  &__header {
+    padding: 0.5rem 0rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 3rem;
+      padding: 1rem 0
+    }
+  }
+
+  &__logo-list {
+    @include flex-center(row, space-between, start);
+    width: 90%;
+    padding: 0.5rem 0;
+
+    @include tablet {
+      @include flex-center(row, space-between, baseline);
+      width: 20%;
+      padding-left: 3rem;
+    }
+
+    @include desktop {
+      width: 15%;
+    }
+
+    &-img {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      @include tablet {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+  }
+
+  &__booking {
+    padding: 0.5rem 0 0.25rem;
+    font-size: 0.875rem;
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
+    @include desktop {
+      padding: 0 3rem 0 0;
+    }
+
+    &-agent {
+      font-weight: 600;
+      padding: 0.5rem 0 0.25rem;
+
+      @include tablet {
+        padding: 1rem 0;
+      }
+    }
+    &-address {
+      padding: 1rem 0;
+
+      @include tablet {
+        padding: 1rem 0 2rem;
+      }
+    }
+    &-email {
+      padding: 0.25rem 0;
+    }
+  }
+
+  &__watermark {
+    padding: 2rem 0 0.5rem;
+
+    @include tablet {
+      position: absolute;
+      top: 1rem;
+      right: 3rem;
+    }
+
+    @include desktop {
+      position: absolute;
+      top: 1rem;
+      right: 12rem;
+    }
+
+    &-title {
+      font-weight: 400;
+
+      @include tablet {
+        font-size: 2rem;
+        font-weight: 300;
+      }
+
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: 0.6875rem;
+
+    @include tablet {
+      font-size: 1.25rem;
+      padding: 3rem 0 0;
+    }
+
+    @include desktop {
+      padding: 3rem 0 2rem;
+    }
+  }
+}
