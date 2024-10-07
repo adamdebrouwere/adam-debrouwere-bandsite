@@ -14,6 +14,10 @@
     overflow: hidden;
 
     @include flex-center(row, start);
+
+    @include desktop {
+      height: 50vw;
+    }
   }
 
   &__img {
@@ -23,6 +27,10 @@
 
     @include tablet {
       object-position: bottom;
+    }
+
+    @include desktop {
+      object-position: top;
     }
   }
   &__overlay {
@@ -45,6 +53,11 @@
 
     @include tablet {
       padding: 5vw;
+    }
+
+    @include desktop {
+      font-size: 4.5vw;
+      padding: 10vw;
     }
   }
 }

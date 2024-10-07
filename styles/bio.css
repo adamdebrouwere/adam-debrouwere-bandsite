@@ -223,6 +223,11 @@ ul {
   justify-content: start;
   align-items: center;
 }
+@media (min-width: 80rem) {
+  .hero__container {
+    height: 50vw;
+  }
+}
 .hero__img {
   width: 100%;
   height: 58vw;
@@ -233,6 +238,12 @@ ul {
   .hero__img {
     -o-object-position: bottom;
        object-position: bottom;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__img {
+    -o-object-position: top;
+       object-position: top;
   }
 }
 .hero__overlay {
@@ -255,6 +266,12 @@ ul {
 @media (min-width: 48rem) {
   .hero__header {
     padding: 5vw;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__header {
+    font-size: 4.5vw;
+    padding: 10vw;
   }
 }
 
