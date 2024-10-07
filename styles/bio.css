@@ -241,16 +241,21 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding: 4vw;
+  padding: 1rem;
+}
+@media (min-width: 48rem) {
+  .about {
+    padding: 2rem;
+  }
 }
 .about__header {
   padding: 0.5rem 0;
-  font-size: 6.5vw;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 48rem) {
   .about__header {
-    font-size: 5.5vw;
+    font-size: 2.25rem;
     color: #323232;
   }
 }
@@ -262,7 +267,7 @@ ul {
 }
 @media (min-width: 48rem) {
   .about__container {
-    padding: 2vw 7vw;
+    padding: 1rem 3.5rem;
   }
 }
 .about__img {
@@ -281,16 +286,16 @@ ul {
   }
 }
 .about__quote {
-  padding: 3vw 0 0;
+  padding: 1.5rem 0 0;
   font-weight: 600;
   font-size: 0.875rem;
-  line-height: 1.25rem;
-  flex: 1;
+  line-height: 1.5rem;
 }
 @media (min-width: 48rem) {
   .about__quote {
-    font-size: 3vw;
-    line-height: 4vw;
+    padding: 2rem 0 0;
+    font-size: 1.375rem;
+    line-height: 2rem;
   }
 }
 .about__quote-author {
@@ -300,19 +305,20 @@ ul {
 }
 @media (min-width: 48rem) {
   .about__quote-author {
-    padding: 1vw 0;
-    font-size: 2vw;
+    padding: 1rem 0 2rem;
+    font-size: 1.25rem;
   }
 }
 .about__name {
-  padding: 1vw 0;
+  padding: 1.25rem 0 0.5rem;
   font-size: 0.875rem;
+  font-weight: 600;
 }
 @media (min-width: 48rem) {
   .about__name {
+    padding: 2rem 0 1rem;
     font-weight: 600;
-    font-size: 3vw;
-    padding: 2vw 0;
+    font-size: 1.75rem;
   }
 }
 .about__text-container {
@@ -325,19 +331,20 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    gap: 5vw;
+    align-items: flex-start;
+    gap: 2rem;
   }
 }
 .about__text {
   font-size: 0.8125rem;
-  padding: 2vw 0;
-  flex: 1;
+  line-height: 1.25rem;
+  padding: 0.5rem 0;
 }
 @media (min-width: 48rem) {
   .about__text {
-    font-size: 2vw;
-    line-height: 3vw;
+    font-size: 1rem;
+    line-height: 2rem;
+    flex: 1;
   }
 }
 
@@ -346,12 +353,12 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  padding: 2vw 4vw;
+  padding: 2rem 1rem;
   background-color: #fafafa;
 }
 @media (min-width: 48rem) {
   .gallery {
-    padding: 3vw 4vw;
+    padding: 2rem 2rem 1.5rem;
     color: #323232;
   }
 }
@@ -373,23 +380,24 @@ ul {
   }
 }
 .gallery__header {
-  padding: 5vw 0 2.5vw;
-  font-size: 7vw;
+  padding: 1.5rem 1rem 1.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 @media (min-width: 48rem) {
   .gallery__header {
-    font-size: 5vw;
+    font-size: 2.5rem;
+    padding: 1rem 0;
   }
 }
 .gallery__img {
   width: 100%;
-  padding: 2vw 0;
+  padding: 1rem;
 }
 @media (min-width: 48rem) {
   .gallery__img {
     width: 31%;
-    padding: 2vw 0;
+    padding: 0.75rem 0;
   }
 }
 
@@ -405,7 +413,7 @@ ul {
 }
 @media (min-width: 48rem) {
   .footer {
-    padding: 4vw 5vw;
+    padding: 2.5rem;
   }
 }
 .footer__container {
@@ -432,13 +440,13 @@ ul {
   }
 }
 .footer__header {
-  padding: 1rem 0rem;
-  font-size: 5vw;
+  padding: 0.5rem 0rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 @media (min-width: 48rem) {
   .footer__header {
-    font-size: 5vw;
+    font-size: 2.5rem;
   }
 }
 .footer__logo-list {
@@ -446,7 +454,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  width: 50%;
+  width: 90%;
   padding: 0.5rem 0;
 }
 @media (min-width: 48rem) {
@@ -455,17 +463,13 @@ ul {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-  }
-}
-@media (min-width: 48rem) {
-  .footer__logo-list {
     width: 25%;
-    padding-left: 4vw;
+    padding-left: 2rem;
   }
 }
-.footer__logo-list-item-img {
-  width: 3.5vw;
-  height: 4vw;
+.footer__logo-list-img {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .footer-booking {
   padding: 0.5rem 0 0.25rem;
@@ -473,15 +477,25 @@ ul {
 }
 @media (min-width: 48rem) {
   .footer-booking {
-    font-size: 2vw;
+    font-size: 1rem;
   }
 }
 .footer-booking__agent {
   font-weight: 600;
   padding: 0.5rem 0 0.25rem;
 }
+@media (min-width: 48rem) {
+  .footer-booking__agent {
+    padding: 1rem 0;
+  }
+}
 .footer-booking__address {
   padding: 1rem 0;
+}
+@media (min-width: 48rem) {
+  .footer-booking__address {
+    padding: 1rem 0 2rem;
+  }
 }
 .footer-booking__email {
   padding: 0.25rem 0;
@@ -492,8 +506,8 @@ ul {
 @media (min-width: 48rem) {
   .footer__watermark {
     position: absolute;
-    top: 2rem;
-    right: 4rem;
+    top: 1rem;
+    right: 3rem;
   }
 }
 .footer__watermark-title {
@@ -501,7 +515,7 @@ ul {
 }
 @media (min-width: 48rem) {
   .footer__watermark-title {
-    font-size: 3vw;
+    font-size: 3.8vw;
     font-weight: 300;
   }
 }
