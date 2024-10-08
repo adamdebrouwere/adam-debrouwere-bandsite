@@ -102,10 +102,10 @@ ul {
     padding: 1rem 0 0 0;
 
     //tablet
-    @include tablet {
+    @include tablet { 
+      @include flex-center(row, space-between);
       height: 100%;
       width: 50%;
-      @include flex-center(row, space-between);
       padding: 0;
     }
 
@@ -134,7 +134,7 @@ ul {
   }
 
   &__list {
-    @include flex-center();
+    @include flex-center(row, space-evenly);
     width: 100%;
 
     //tablet nav
@@ -144,10 +144,9 @@ ul {
     }
 
     &-item {
-      @include flex-center();
+      @include flex-center;
       height: 100%;
       width: 100%;
-      text-align: center;
       font-size: 1rem;
       cursor: pointer;
       padding: 0.5rem 0;
@@ -155,8 +154,8 @@ ul {
 
       //tablet
       @include tablet {
-        margin: 0 auto;
         font-size: 1.25rem;
+        width: auto;
         padding: 0;
         margin: 0 1.5rem;
       }
@@ -171,6 +170,7 @@ ul {
       }
 
       &--active {
+        padding-bottom: 0;
         border-bottom: 0.25rem solid $color-white;
         font-weight: 600;
       }
