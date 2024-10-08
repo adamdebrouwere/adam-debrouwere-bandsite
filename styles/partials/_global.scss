@@ -15,15 +15,13 @@ body {
   width: 100vw;
   min-width: 250px;
   font-family: "Avenir", sans-serif;
-  // letter-spacing: $spacing;
-  // line-height: $line-height;
 }
 
 a {
   text-decoration: none;
   color: $color-white;
 }
-//text sizing
+//default text sizing
 b {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -152,6 +150,7 @@ ul {
       font-size: 1rem;
       cursor: pointer;
       padding: 0.5rem 0;
+      transition: background-color 0.2s ease;
 
       //tablet
       @include tablet {
@@ -167,7 +166,7 @@ ul {
       }
 
       &:hover {
-        color: lighten($color-white, 10%);
+        background-color: lighten($color-bandSite-black, 15%);
       }
 
       &--active {
