@@ -250,3 +250,39 @@
   //   pointer-events: none;
   // }
 }
+
+.conversation {
+  width: 100%;
+  padding: 1rem;
+
+  &__form {
+    @include flex-center();
+  }
+
+  &__profile {
+    @include flex-center(row, flex-start);
+
+    &-img {
+      height: 4rem;
+      width: 4rem;
+      padding: .25rem;
+      border-radius: 50%;
+      border: none;
+      object-fit: cover;
+      position: left;
+    }
+  
+  &-comment__container {
+    width: 100%;
+    padding: 0 1rem
+  }
+  
+  &__name {
+    &-input {
+      width: 100%;
+    }
+  }
+  }
+
+  
+}

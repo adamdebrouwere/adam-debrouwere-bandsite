@@ -202,9 +202,10 @@ ul {
 }
 .navbar__list-item:hover {
   background-color: #585858;
+  border-bottom: 0.25rem solid #fafafa;
+  font-weight: 600;
 }
 .navbar__list-item--active {
-  padding-bottom: 0;
   border-bottom: 0.25rem solid #ffffff;
   font-weight: 600;
 }
@@ -668,4 +669,38 @@ ul {
 }
 .gallery__img:hover {
   filter: grayscale(0%);
+}
+
+.conversation {
+  width: 100%;
+  padding: 1rem;
+}
+.conversation__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.conversation__profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.conversation__profile-img {
+  height: 4rem;
+  width: 4rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  border: none;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: left;
+}
+.conversation__profile-comment__container {
+  width: 100%;
+  padding: 0 1rem;
+}
+.conversation__profile__name-input {
+  width: 100%;
 }/*# sourceMappingURL=bio.css.map */

@@ -202,9 +202,10 @@ ul {
 }
 .navbar__list-item:hover {
   background-color: #585858;
+  border-bottom: 0.25rem solid #fafafa;
+  font-weight: 600;
 }
 .navbar__list-item--active {
-  padding-bottom: 0;
   border-bottom: 0.25rem solid #ffffff;
   font-weight: 600;
 }

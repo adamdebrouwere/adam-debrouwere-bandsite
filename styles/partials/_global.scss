@@ -167,10 +167,11 @@ ul {
 
       &:hover {
         background-color: lighten($color-bandSite-black, 15%);
+        border-bottom: 0.25rem solid $color-alabaster;
+        font-weight: 600;
       }
 
       &--active {
-        padding-bottom: 0;
         border-bottom: 0.25rem solid $color-white;
         font-weight: 600;
       }
