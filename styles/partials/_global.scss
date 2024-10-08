@@ -144,6 +144,7 @@ ul {
     }
 
     &-item {
+      @include flex-center();
       height: 100%;
       width: 100%;
       text-align: center;
@@ -155,14 +156,14 @@ ul {
       //tablet
       @include tablet {
         margin: 0 auto;
-        justify-self: center;
-        align-content: center;
         font-size: 1.25rem;
-        padding: 0 1.5rem;
+        padding: 0;
+        margin: 0 1.5rem;
       }
       @include desktop {
         font-size: 1rem;
-        padding: 0 1rem;
+        padding: 0;
+        margin: 0 1rem;
       }
 
       &:hover {
@@ -172,10 +173,6 @@ ul {
       &--active {
         border-bottom: 0.25rem solid $color-white;
         font-weight: 600;
-
-        @include tablet {
-          padding: 0.5rem 1rem 0.25rem;
-        }
       }
     }
   }
