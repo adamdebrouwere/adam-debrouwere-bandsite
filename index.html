@@ -117,20 +117,22 @@
       </section>
       <section class="conversation">
         <h2 class="conversation__header">Join the Conversation</h2>
-        <form action="post" class="conversation__form">
+        <form class="conversation__form">
           <div class="conversation__profile">
             <img src="./assets/images/Mohan-muruge.jpg" alt="mohan-maruge profile pic" class="conversation__profile-img">
           </div>
           <div class="conversation-comment__container">
             <div class="conversation__name">
-              <p class="conversation__name-heading">NAME</p>
-              <input type="text" id="name-input" class="conversation__name-input" placeholder="Enter your name">
+              <p class="conversation__name-header">NAME</p>
+              <input name="name" type="text" id="name-input" class="conversation__name-input" placeholder="Enter your name">
             </div>
             <div class="conversation__comment">
-              <p class="conversation__comment-heading">COMMENT</p>
+              <p class="conversation__comment-header">COMMENT</p>
               <textarea name="comment" id="comment-input" class="conversation__comment-input" placeholder="Add a new comment"></textarea> 
             </div>
-            <div class="conversation__comment-btn"></div>
+            <div class="conversation__submit">
+              <button class="conversation__submit-btn">COMMENT</button>
+            </div>
           </div>
         </form>
         <div class="post__container">

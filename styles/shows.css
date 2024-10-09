@@ -102,6 +102,14 @@ ul {
   list-style: none;
 }
 
+input {
+  border: none;
+}
+
+button {
+  border: none;
+}
+
 .navbar {
   background-color: #323232;
   color: #ffffff;
