@@ -42,7 +42,9 @@ const loopAndAppend = (items) => {
     commentPosts.innerText = "";
 
     items.forEach(item => {
-
+        const commentPostsContent = document.createElement("div");
+        commentPostsContent.classList.add("conversation-post__content");
+        
         const commentPostsLeft = document.createElement("div");
         commentPostsLeft.classList.add("conversation-post__content-left");
 
@@ -58,8 +60,7 @@ const loopAndAppend = (items) => {
         const profilePic = document.createElement('img');
         profilePic.classList.add("conversation-post__profile-pic")
         profilePic.alt = `${item.name}'s profile picture`;
-
-
+        
         const posted = document.createElement('span');
         posted.classList.add("conversation-post__posted");
         posted.innerText = item.posted;
@@ -75,8 +76,9 @@ const loopAndAppend = (items) => {
         const lineBreak = document.createElement('div');
         lineBreak.classList.add("conversation-post__line-break")
         
-        commentPosts.appendChild(commentPostsLeft);
-        commentPosts.appendChild(commentPostsRight);
+        commentPosts.appendChild(commentPostsContent);
+        commentPostsContent.appendChild(commentPostsLeft);
+        commentPostsContent.appendChild(commentPostsRight);
         commentPostsRight.appendChild(commentPostsRightTop);
         commentPostsRight.appendChild(commentPostsRightBottom);
         commentPostsLeft.appendChild(profilePic);
@@ -85,9 +87,12 @@ const loopAndAppend = (items) => {
         commentPostsRightBottom.appendChild(comment);
         commentPosts.appendChild(lineBreak);
      });
+     console.log(comments)
 } 
 
 loopAndAppend(comments);
+
+
 
 
 

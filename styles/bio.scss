@@ -263,7 +263,7 @@
   &__form {
     @include flex-center(row, center, flex-start);
     height: 100%;
-    padding: 0 1rem;
+    padding: 0;
   }
 
   &__profile {
@@ -346,39 +346,70 @@
 
   &-post{
     &__container {
-      @include flex-center(column, flex-start, flex-start);
+      @include flex-center(column, flex-start);
       width: 100%;
-      padding: 1rem 0;
+    }
+    
+    &__content {
+      width: 100%;
+      @include flex-center(row, space-between, flex-start);
+      padding: 1rem 0rem 0 3rem;
+      
+      &-left {
+        padding: 1rem;
+        position: relative;
+      }
+
+      &-right {
+        width: 100%;
+        padding: 1rem 0;
+        @include flex-center(column, flex-start);
+
+        &-top {
+          width: 100%;
+          padding: 0 0 1rem;
+          @include flex-center(row, space-between);
+        }
+
+        &-bottom {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
     }
 
-    &__line-break {
+   &__line-break {
       width: 100%;
+      padding: 0.5rem;
       border-bottom: 0.25rem solid $color-silver;
 
     }
+    
     &__profile-pic{
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
       background-color: $color-silver;
-    }
-
-    &__content {
-
-      width: 70%;
-      padding: 1rem;
+      position: absolute;
+      padding: 1rem 0 0 0;
+      top: 0.8rem;
+      right: 1.75rem;
     }
 
     &__posted {
-      padding: 1rem;
+      font-size: 1.25;
+      color: $color-silver;
+      padding: 0;
     }
 
     &__name {
-      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      padding:0;
     }
 
     &__comment {
-      padding: 1rem;
+      padding:0;
     }
   }
 }
