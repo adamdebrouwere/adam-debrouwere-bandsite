@@ -2,51 +2,92 @@ let comments = [
     {
         posted: "11/02/2023",
         name:"Victor Pinto",
-        desctiption: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciat this for what it is and what it contains."
+        description: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciat this for what it is and what it contains."
     },
     {   posted: "10/28/2023",
         name:"Christina Cabrera",
-        desctiption: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+        description: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {   posted: "10/20/2023",
         name:"Isaac Tadesse",
-        desctiption: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+        description: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
 ]
 
 const commentsForm = document.querySelector(".conversation__form")
+const commentPosts = document.querySelector(".conversation-post__container");
 
-// const commentsList = document.querySelector("");
 
 commentsForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("form submitted");
-    console.log(event.target)
-    console.log(event.target.name.value)
-    console.log(event.target.comment.value)
     
     if(!(event.target.name.value && event.target.comment.value)) {
-        alert("Please input name and comment.")
+        alert("Please input name and comment.");
+        return;
     }
     const newComment = {
-        posted: Date.now(),
+        posted: new Date (Date.now()).toLocaleDateString(),
         name: event.target.name.value,
-        desctiption: event.target.comment.value
+        description: event.target.comment.value
     }
 
-    console.log(newComment)
+    comments.unshift(newComment)
+    loopAndAppend(comments);
+
+    event.target.name.value = "";
+    event.target.comment.value = "";
 })
 
-const loopAndAppenComments = () => {
-    for(const comment in comments) {
-        console.log(comment)
-        const commentListItem = document.createElement('p');
+const loopAndAppend = (items) => {
+    commentPosts.innerText = "";
 
-        commentListItem.innerText = comments[comment].name
-        commentsList.appendChild(commentListItem)
-     }
+    items.forEach(item => {
+
+        const commentPostsLeft = document.createElement("div");
+        commentPostsLeft.classList.add("conversation-post__content-left");
+
+        const commentPostsRight = document.createElement("div");
+        commentPostsRight.classList.add("conversation-post__content-right");
+        
+        const commentPostsRightTop = document.createElement("div");
+        commentPostsRightTop.classList.add("conversation-post__content-right-top");
+
+        const commentPostsRightBottom = document.createElement("div");
+        commentPostsRightBottom.classList.add("conversation-post__content-right-bottom")
+
+        const profilePic = document.createElement('img');
+        profilePic.classList.add("conversation-post__profile-pic")
+        profilePic.alt = `${item.name}'s profile picture`;
+
+
+        const posted = document.createElement('span');
+        posted.classList.add("conversation-post__posted");
+        posted.innerText = item.posted;
+        
+        const name = document.createElement('p');
+        name.classList.add("conversation-post__name");
+        name.innerText = item.name;
+        
+        const comment = document.createElement('article');
+        comment.classList.add("conversation-post__comment");
+        comment.innerText = item.description;
+
+        const lineBreak = document.createElement('div');
+        lineBreak.classList.add("conversation-post__line-break")
+        
+        commentPosts.appendChild(commentPostsLeft);
+        commentPosts.appendChild(commentPostsRight);
+        commentPostsRight.appendChild(commentPostsRightTop);
+        commentPostsRight.appendChild(commentPostsRightBottom);
+        commentPostsLeft.appendChild(profilePic);
+        commentPostsRightTop.appendChild(name);
+        commentPostsRightTop.appendChild(posted);
+        commentPostsRightBottom.appendChild(comment);
+        commentPosts.appendChild(lineBreak);
+     });
 } 
 
+loopAndAppend(comments);
 
 
 
@@ -74,4 +115,4 @@ const loopAndAppenComments = () => {
 //             mask.style.background = 'rgba(255, 255, 255, 0)';
 //         })
 //     })
-// })
+// }) 

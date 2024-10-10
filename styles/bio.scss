@@ -263,6 +263,7 @@
   &__form {
     @include flex-center(row, center, flex-start);
     height: 100%;
+    padding: 0 1rem;
   }
 
   &__profile {
@@ -342,4 +343,43 @@
       // }
     }
   }
+
+  &-post{
+    &__container {
+      @include flex-center(column, flex-start, flex-start);
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    &__line-break {
+      width: 100%;
+      border-bottom: 0.25rem solid $color-silver;
+
+    }
+    &__profile-pic{
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: $color-silver;
+    }
+
+    &__content {
+
+      width: 70%;
+      padding: 1rem;
+    }
+
+    &__posted {
+      padding: 1rem;
+    }
+
+    &__name {
+      padding: 1rem;
+    }
+
+    &__comment {
+      padding: 1rem;
+    }
+  }
 }
+

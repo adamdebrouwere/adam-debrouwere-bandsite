@@ -694,6 +694,7 @@ button {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
+  padding: 0 1rem;
 }
 .conversation__profile {
   padding: 0 0.25rem;
@@ -771,4 +772,35 @@ button {
 .conversation__submit-btn:focus {
   outline: none;
   box-shadow: 0 0 0 2px #323232, 0.5;
+}
+.conversation-post__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem 0;
+}
+.conversation-post__line-break {
+  width: 100%;
+  border-bottom: 0.25rem solid #afafaf;
+}
+.conversation-post__profile-pic {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #afafaf;
+}
+.conversation-post__content {
+  width: 70%;
+  padding: 1rem;
+}
+.conversation-post__posted {
+  padding: 1rem;
+}
+.conversation-post__name {
+  padding: 1rem;
+}
+.conversation-post__comment {
+  padding: 1rem;
 }/*# sourceMappingURL=bio.css.map */
