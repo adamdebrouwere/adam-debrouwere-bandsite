@@ -28,7 +28,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-width: 250px;
   font-family: "Avenir", sans-serif;
 }
@@ -323,10 +323,12 @@ button {
 .footer__booking {
   padding: 0.5rem 0 0.25rem;
   font-size: 0.875rem;
+  width: 100%;
+  flex: 1 1 30%;
 }
 @media (min-width: 48rem) {
   .footer__booking {
-    font-size: 1.25rem;
+    font-size: 2vw;
   }
 }
 @media (min-width: 80rem) {
@@ -344,7 +346,7 @@ button {
   }
 }
 .footer__booking-address {
-  padding: 1rem 0;
+  padding: 1rem 0rem;
 }
 @media (min-width: 48rem) {
   .footer__booking-address {

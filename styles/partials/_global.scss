@@ -12,7 +12,7 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   min-width: 250px;
   font-family: "Avenir", sans-serif;
 }
@@ -266,10 +266,12 @@ button {
 
   &__booking {
     padding: 0.5rem 0 0.25rem;
-    font-size: 0.875rem;
+    font-size: .875rem;
+    width: 100%;
+    flex: 1 1 30%;
 
     @include tablet {
-      font-size: 1.25rem;
+      font-size: 2vw;
     }
     @include desktop {
       padding: 0 3rem 0 0;
@@ -284,7 +286,7 @@ button {
       }
     }
     &-address {
-      padding: 1rem 0;
+      padding: 1rem 0rem;
 
       @include tablet {
         padding: 1rem 0 2rem;
