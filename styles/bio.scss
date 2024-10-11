@@ -255,15 +255,28 @@
   width: 100%;
   padding: 1rem;
 
+  @include tablet {
+    padding: 4rem 2rem;
+  }
+
   &__header {
     font-weight: 600;
     color: $color-bandSite-black
   }
 
   &__form {
-    @include flex-center(row, center, flex-start);
+    @include flex-center(column, center, flex-start);
     height: 100%;
     padding: 0;
+
+    @include tablet {
+      padding: 0rem 3.25rem;
+    }
+
+    &-container {
+      width: 100%;
+      @include flex-center(row, normal, flex-start);
+    }
   }
 
   &__profile {
@@ -293,7 +306,7 @@
       padding: 0.5rem 0;
     }
     &-input {
-      @include input-styling
+      @include input-styling;
     }
   }
 
@@ -348,12 +361,18 @@
     &__container {
       @include flex-center(column, flex-start);
       width: 100%;
+
+      @include tablet {
+        padding: 1rem 3.25rem;
+      }
     }
     
     &__content {
       width: 100%;
       @include flex-center(row, space-between, flex-start);
       padding: 1rem 0rem 0 3rem;
+
+
       
       &-left {
         padding: 1rem;
@@ -381,7 +400,15 @@
    &__line-break {
       width: 100%;
       padding: 0.5rem;
-      border-bottom: 0.25rem solid $color-silver;
+      border-bottom: 0.15rem solid $color-mercury;
+     
+
+      &-top {
+        @include tablet {
+          width: 100%;
+          padding: 1rem 3.25rem;
+        }
+      }
 
     }
     
@@ -389,7 +416,7 @@
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
-      background-color: $color-silver;
+      background-color: $color-mercury;
       position: absolute;
       padding: 1rem 0 0 0;
       top: 0.8rem;

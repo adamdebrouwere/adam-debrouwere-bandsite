@@ -118,30 +118,28 @@
       <section class="conversation">
         <h2 class="conversation__header">Join the Conversation</h2>
         <form class="conversation__form">
-          <div class="conversation__profile">
-            <img src="./assets/images/Mohan-muruge.jpg" alt="mohan-maruge profile pic" class="conversation__profile-img">
+          <div class="conversation__form-container">
+            <div class="conversation__profile">
+              <img src="./assets/images/Mohan-muruge.jpg" alt="mohan-maruge profile pic" class="conversation__profile-img">
+            </div>
+            <div class="conversation-comment__container">
+              <div class="conversation__name">
+                <p class="conversation__name-header">NAME</p>
+                <input name="name" type="text" id="name-input" class="conversation__name-input" placeholder="Enter your name">
+              </div>
+              <div class="conversation__comment">
+                <p class="conversation__comment-header">COMMENT</p>
+                <textarea name="comment" id="comment-input" class="conversation__comment-input" placeholder="Add a new comment"></textarea> 
+              </div>
+              <div class="conversation__submit">
+                <button type="submit" class="conversation__submit-btn">COMMENT</button>
+              </div>
+            </div>
           </div>
-          <div class="conversation-comment__container">
-            <div class="conversation__name">
-              <p class="conversation__name-header">NAME</p>
-              <input name="name" type="text" id="name-input" class="conversation__name-input" placeholder="Enter your name">
-            </div>
-            <div class="conversation__comment">
-              <p class="conversation__comment-header">COMMENT</p>
-              <textarea name="comment" id="comment-input" class="conversation__comment-input" placeholder="Add a new comment"></textarea> 
-            </div>
-            <div class="conversation__submit">
-              <button type="submit" class="conversation__submit-btn">COMMENT</button>
-            </div>
-          </div>
+          <div class="conversation-post__line-break conversation-post__line-break-top"></div>
         </form>
-        <div class="conversation-post__line-break conversation-post__line-break-top"></div>
-        <div class="conversation-post__container">
-          
-
-          </div>
-          </div>
-        </div>
+       
+        <div class="conversation-post__container"></div>
       </section>
       <footer class="footer">
         <div class="footer__container-top">
