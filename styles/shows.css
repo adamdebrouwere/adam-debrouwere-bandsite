@@ -275,6 +275,7 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
+    width: 90%;
   }
 }
 .footer__header {
@@ -334,7 +335,7 @@ button {
 }
 @media (min-width: 80rem) {
   .footer__booking {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     padding: 0 3rem 0 0;
   }
 }

@@ -223,6 +223,7 @@ button {
         @include desktop {
           flex: 1;
           @include flex-center(row, flex-start, flex-end);
+          width: 90%;
         }
       }
     }
@@ -275,7 +276,7 @@ button {
       font-size: 2vw;
     }
     @include desktop {
-      font-size: 1.5rem;
+      font-size: 1.5vw;
       padding: 0 3rem 0 0;
     }
 

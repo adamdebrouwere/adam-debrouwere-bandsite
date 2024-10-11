@@ -258,10 +258,13 @@
   @include tablet {
     padding: 4rem 2rem;
   }
+  @include desktop {
+    padding: 4rem 8em;
+  }
 
   &__header {
     font-weight: 600;
-    color: $color-bandSite-black
+    color: $color-bandSite-black;
   }
 
   &__form {
@@ -270,7 +273,14 @@
     padding: 0;
 
     @include tablet {
+      @include flex-center(column);
       padding: 0rem 3.25rem;
+    }
+
+    @include desktop {
+      padding-top: 2rem;
+      margin: 0 auto;
+      width: 65%;
     }
 
     &-container {
@@ -282,11 +292,10 @@
   &__profile {
     padding: 0 0.25rem;
 
-
     &-img {
       width: 3rem;
       height: 3rem;
-      border-radius:50%;
+      border-radius: 50%;
       object-fit: cover;
       position: right;
       transform: translateY(2rem);
@@ -327,8 +336,9 @@
 
   &__submit {
     padding: 0.75rem 0 0;
-    
-    &-btn { 
+    @include flex-center(row, flex-end);
+
+    &-btn {
       @include flex-center;
       width: 100%;
       padding: 1rem 0;
@@ -349,6 +359,10 @@
         box-shadow: 0 0 0 2px $color-bandSite-black, 0.5;
       }
 
+      @include tablet {
+        width: 25%;
+      }
+
       // &:action {
       //   background-color: darken($color-bandSite-black, 10%);
       //   box-shadow: inset 0 0.125rem 0.25rem $color-white;
@@ -357,7 +371,7 @@
     }
   }
 
-  &-post{
+  &-post {
     &__container {
       @include flex-center(column, flex-start);
       width: 100%;
@@ -365,15 +379,18 @@
       @include tablet {
         padding: 1rem 3.25rem;
       }
+
+      @include desktop {
+        margin: 0 auto;
+        width: 65%;
+      }
     }
-    
+
     &__content {
       width: 100%;
       @include flex-center(row, space-between, flex-start);
       padding: 1rem 0rem 0 3rem;
 
-
-      
       &-left {
         padding: 1rem;
         position: relative;
@@ -397,11 +414,10 @@
       }
     }
 
-   &__line-break {
+    &__line-break {
       width: 100%;
       padding: 0.5rem;
       border-bottom: 0.15rem solid $color-mercury;
-     
 
       &-top {
         @include tablet {
@@ -409,10 +425,9 @@
           padding: 1rem 3.25rem;
         }
       }
-
     }
-    
-    &__profile-pic{
+
+    &__profile-pic {
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
@@ -432,12 +447,11 @@
     &__name {
       font-weight: 600;
       font-size: 1.25rem;
-      padding:0;
+      padding: 0;
     }
 
     &__comment {
-      padding:0;
+      padding: 0;
     }
   }
 }
-
