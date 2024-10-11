@@ -87,7 +87,6 @@ const loopAndAppend = (items) => {
         commentPostsRightBottom.appendChild(comment);
         commentPosts.appendChild(lineBreak);
      });
-     console.log(comments)
 } 
 
 loopAndAppend(comments);

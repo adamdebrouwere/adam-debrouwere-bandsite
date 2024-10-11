@@ -192,6 +192,7 @@ button {
   cursor: pointer;
   padding: 0.5rem 0;
   transition: background-color 0.2s ease;
+  border-bottom: 0.25rem solid #323232;
 }
 @media (min-width: 48rem) {
   .navbar__list-item {
@@ -359,6 +360,7 @@ button {
 @media (min-width: 48rem) {
   .footer__booking-address {
     padding: 1rem 0 2rem;
+    line-height: 2vw;
   }
 }
 .footer__booking-email {
@@ -392,7 +394,7 @@ button {
 }
 @media (min-width: 80rem) {
   .footer__watermark-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 }
 .footer__copyright {
@@ -406,6 +408,7 @@ button {
 }
 @media (min-width: 80rem) {
   .footer__copyright {
+    font-size: 1.5rem;
     padding: 3rem 0 2rem;
   }
 }
@@ -413,7 +416,7 @@ button {
 .hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 .hero__container {
   width: 100%;
@@ -431,7 +434,7 @@ button {
 }
 .hero__img {
   width: 100%;
-  height: 70vw;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
@@ -439,8 +442,8 @@ button {
 }
 @media (min-width: 48rem) {
   .hero__img {
-    -o-object-position: top;
-       object-position: top;
+    -o-object-position: left;
+       object-position: left;
   }
 }
 @media (min-width: 80rem) {
@@ -464,7 +467,7 @@ button {
   align-items: flex-start;
   width: 100%;
   position: absolute;
-  padding: 1rem 4vw;
+  padding: 6vw 4vw;
   z-index: 2;
   color: #ffffff;
   inset: 0;
@@ -486,6 +489,7 @@ button {
 }
 .hero__album {
   padding: 1rem 0 0;
+  font-size: 4vw;
 }
 @media (min-width: 48rem) {
   .hero__album {
@@ -502,15 +506,17 @@ button {
 .hero__header {
   position: relative;
   color: #ffffff;
-  width: 50%;
+  width: 80%;
   font-weight: 600;
-  font-size: 5vw;
+  font-size: 67w;
   padding: 1rem 0 0;
+  line-height: 7.5vw;
 }
 @media (min-width: 48rem) {
   .hero__header {
     width: 80%;
     font-size: 3.75rem;
+    line-height: 8vw;
   }
 }
 @media (min-width: 80rem) {
@@ -522,7 +528,7 @@ button {
 }
 .hero__soundCloud {
   width: 100%;
-  height: 50%;
+  height: 100%;
   padding: 1rem 0;
 }
 @media (min-width: 48rem) {
