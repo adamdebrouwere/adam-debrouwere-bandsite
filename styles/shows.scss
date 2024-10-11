@@ -3,101 +3,103 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-
 .hero {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__container {
     width: 100%;
     height: 100%;
-  
-    &__container {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-  
-      @include flex-center(column, center, start);
-  
-      @include desktop {
-        height: 50vw;
-      }
+    overflow: hidden;
+
+    @include flex-center(column, center, start);
+
+    @include desktop {
+      height: 50vw;
     }
-  
-    &__img {
-      width: 100%;
-      height: 70vw;
-      object-fit: cover;
+  }
+
+  &__img {
+    width: 100%;
+    height: 70vw;
+    object-fit: cover;
+    object-position: top;
+
+    @include tablet {
       object-position: top;
-  
-      @include tablet {
-        object-position: bottom;
-      }
-  
-      @include desktop {
-        object-position: top;
-      }
-    }
-    &__overlay {
-      width: 100%;
-      height: 100%;
-      inset: 0;
-      position: absolute;
-      background-color: $color-bandSite-black--overlay;
-      z-index: 1;
     }
 
-    &__content {
-        @include flex-center(column, center, flex-start);
-        width: 100%;
-        position: absolute;
-        padding: 1rem 1rem;
-        z-index: 2;
-        color: $color-white;
-        inset: 0;
-        overflow: hidden;
-
-        
+    @include desktop {
+      object-position: top;
     }
+  }
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    background-color: $color-bandSite-black--overlay;
+    z-index: 1;
+  }
 
-    &__album {
-        padding: 1rem 0;   
+  &__content {
+    @include flex-center(column, center, flex-start);
+    width: 100%;
+    position: absolute;
+    padding: 1rem 4vw;
+    z-index: 2;
+    color: $color-white;
+    inset: 0;
+    overflow: hidden;
+
+    @include tablet {
+      padding: 2rem 4vw;
     }
+    @include desktop {
+      padding: 10vw;
+    }
+  }
+
+  &__album {
+    padding: 1rem 0 0;
+
+    @include tablet {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+
   &__header {
-        position: relative;
-        color: white;
-        width: 50%;
-        font-weight: 600;
-        font-size: 5vw;
-        z-index: 2;
-        padding: 1rem 0;
-    
-        @include tablet {
-          padding: 5vw;
-        }
-    
-        @include desktop {
-          font-size: 4.5vw;
-          padding: 10vw;
-        }
-      }
-    &__soundCloud {
-      width: 100%;
-      height: 50%;
-      padding: 1rem 0;
-      margin: 0 auto;
-      
-      // padding: 0 1rem;
-      
-      @include tablet {
-        padding: 5vw;
-      }
-  
-      @include desktop {
+    position: relative;
+    color: $color-white;
+    width: 50%;
+    font-weight: 600;
+    font-size: 5vw;
+    padding: 1rem 0 0;
 
-        padding: 10vw;
-      };
-
+    @include tablet {
+      width: 80%;
+      font-size: 3.75rem;
     }
 
-    
+    @include desktop {
+      font-size: 4.5vw;
+    }
+  }
+  &__soundCloud {
+    width: 100%;
+    height: 50%;
+    padding: 1rem 0;
 
-    
+    @include tablet {
+      width: 55%;
+      height: 40%;
+      padding: 2rem 0 0;
+    }
+
+    @include desktop {
+      // padding: 10vw;
+    }
+  }
 }
