@@ -2,7 +2,7 @@
 @use "./variables" as *;
 @use "./typography" as *;
 
-//constants
+//element defaults
 *,
 *::before,
 *::after {
@@ -89,13 +89,11 @@ button {
   border: none;
 }
 
-//navbar
 .navbar {
   background-color: $color-bandSite-black;
   color: $color-white;
   width: 100%;
 
-  //tablet
   @include tablet {
     height: 10vw;
   }
@@ -109,7 +107,6 @@ button {
     @include flex-center(column);
     padding: 1rem 0 0 0;
 
-    //tablet
     @include tablet { 
       @include flex-center(row, space-between);
       height: 100%;
@@ -129,7 +126,6 @@ button {
     font-size: 2rem;
     padding: 0.5rem 0;
 
-    //tablet
     @include tablet {
       font-weight: 400;
       font-size: 2rem;
@@ -145,7 +141,6 @@ button {
     @include flex-center(row, space-evenly);
     width: 100%;
 
-    //tablet nav
     @include tablet {
       height: 100%;
       width: 50%;
@@ -160,7 +155,6 @@ button {
       padding: 0.5rem 0;
       transition: background-color 0.2s ease;
 
-      //tablet
       @include tablet {
         font-size: 1.25rem;
         width: auto;
@@ -177,6 +171,10 @@ button {
         background-color: lighten($color-bandSite-black, 15%);
         border-bottom: 0.25rem solid $color-alabaster;
         font-weight: 600;
+
+        @include tablet {
+          background-color: $color-bandSite-black;
+        }
       }
 
       &--active {
@@ -220,7 +218,7 @@ button {
         width: 100%;
         @include flex-center(row, space-between);
 
-        @include desktop {
+        @include tablet {
           flex: 1;
           @include flex-center(row, flex-start, flex-end);
           width: 90%;

@@ -46,34 +46,58 @@
 
     &__content {
         @include flex-center(column, center, flex-start);
+        width: 100%;
         position: absolute;
+        padding: 1rem 1rem;
+        z-index: 2;
+        color: $color-white;
+        inset: 0;
+        overflow: hidden;
+
+        
     }
 
     &__album {
+        padding: 1rem 0;   
+    }
+  &__header {
         position: relative;
         color: white;
-        padding: 0 1rem;
+        width: 50%;
+        font-weight: 600;
+        font-size: 5vw;
         z-index: 2;
-    }
-
-    &__header {
-      position: relative;
-      color: white;
-      width: 60%;
-      font-weight: 600;
-      font-size: 5vw;
-      z-index: 2;
-      padding: 0 1rem;
-  
+        padding: 1rem 0;
+    
+        @include tablet {
+          padding: 5vw;
+        }
+    
+        @include desktop {
+          font-size: 4.5vw;
+          padding: 10vw;
+        }
+      }
+    &__soundCloud {
+      width: 100%;
+      height: 50%;
+      padding: 1rem 0;
+      margin: 0 auto;
+      
+      // padding: 0 1rem;
+      
       @include tablet {
         padding: 5vw;
       }
   
       @include desktop {
-        font-size: 4.5vw;
+
         padding: 10vw;
-      }
+      };
+
     }
+
+    
 
     
 }

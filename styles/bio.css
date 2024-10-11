@@ -213,6 +213,11 @@ button {
   border-bottom: 0.25rem solid #fafafa;
   font-weight: 600;
 }
+@media (min-width: 48rem) {
+  .navbar__list-item:hover {
+    background-color: #323232;
+  }
+}
 .navbar__list-item--active {
   border-bottom: 0.25rem solid #ffffff;
   font-weight: 600;
@@ -268,7 +273,7 @@ button {
     align-items: center;
   }
 }
-@media (min-width: 48rem) and (min-width: 80rem) {
+@media (min-width: 48rem) and (min-width: 48rem) {
   .footer__container-middle {
     flex: 1;
     display: flex;
@@ -828,6 +833,8 @@ button {
 @media (min-width: 48rem) {
   .conversation__submit-btn {
     width: 25%;
+    font-size: 1rem;
+    padding: 0.75rem 0.25rem;
   }
 }
 .conversation-post__container {
