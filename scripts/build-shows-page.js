@@ -37,61 +37,50 @@ const loopAndAppendShows = (items) => {
   items.forEach((item) => {
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
+
     const showsContainerTop = document.createElement("div");
     showsContainerTop.classList.add("shows__container-top");
 
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
 
-    const showsListItem = document.createElement("li");
-    showsListItem.classList.add("shows__list-item");
+    const createListItem = (title, content, isBold = false) => {
+      const showsListItem = document.createElement("li");
+      showsListItem.classList.add("shows__list-item");
 
-    const showsDateTitle = document.createElement("h2");
-    showsDateTitle.classList.add("shows__list-item-title");
-    showsDateTitle.innerText = "DATE";
+      const showsListItemTitle = document.createElement("h2");
+      showsListItemTitle.classList.add("shows__list-item-title");
+      showsListItemTitle.innerText = title;
 
-    const listItemDate = document.createElement("span");
-    listItemDate.classList.add("shows__list-item-content");
-    listItemDate.classList.add("shows__list-item-content--bold");
-    listItemDate.innerText = item.date;
+      const showsListItemContent = document.createElement("span");
+      showsListItemContent.classList.add("shows__list-item-content");
+      if (isBold) {
+        showsListItemContent.classList.add("shows__list-item-content--bold");
+      }
+      showsListItemContent.innerText = content;
 
-    const showsVenueTitle = document.createElement("h2");
-    showsVenueTitle.classList.add("shows__list-item-title");
-    showsVenueTitle.innerText = "VENUE";
+      showsListItem.appendChild(showsListItemTitle);
+      showsListItem.appendChild(showsListItemContent);
 
-    const listItemVenue = document.createElement("span");
-    listItemVenue.classList.add("shows__list-item-content");
-    listItemVenue.innerText = item.venue;
+      return showsListItem;
+    };
 
-    const showsLocationTitle = document.createElement("h2");
-    showsLocationTitle.classList.add("shows__list-item-title");
-    showsLocationTitle.innerText = "LOCATION";
+    showsList.appendChild(createListItem("DATE", item.date, true));
+    showsList.appendChild(createListItem("VENUE", item.venue));
+    showsList.appendChild(createListItem("LOCATION", item.location));
 
-    const listItemLocation = document.createElement("span");
-    listItemLocation.classList.add("shows__list-item-content");
-    listItemLocation.innerText = item.location;
-
+    showsContainerTop.appendChild(showsList);
+    showsContainer.appendChild(showsContainerTop);
+    
     const buyTicketsButton = document.createElement("button");
     buyTicketsButton.classList.add("shows__button");
     buyTicketsButton.innerText = "BUY TICKETS";
+    showsContainer.appendChild(buyTicketsButton);
+
+    showsSection.appendChild(showsContainer);
 
     const lineBreak = document.createElement("div");
     lineBreak.classList.add("shows__line-break");
-
-    showsSection.appendChild(showsContainer);
-    showsContainer.appendChild(showsContainerTop);
-    showsContainerTop.appendChild(showsList);
-    showsList.appendChild(showsListItem);
-
-    showsListItem.appendChild(showsDateTitle);
-    showsListItem.appendChild(listItemDate);
-    showsListItem.appendChild(showsVenueTitle);
-    showsListItem.appendChild(listItemVenue);
-    showsListItem.appendChild(showsLocationTitle);
-    showsListItem.appendChild(listItemLocation);
-
-    showsContainer.appendChild(buyTicketsButton);
-    
     showsSection.appendChild(lineBreak);
   });
 };
