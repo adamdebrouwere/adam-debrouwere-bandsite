@@ -54,7 +54,9 @@
     overflow: hidden;
 
     @include tablet {
+      @include flex-center(column, space-around, flex-start);
       padding: 2rem 4vw;
+      
     }
     @include desktop {
       @include flex-center();
@@ -89,6 +91,7 @@
       width: 80%;
       font-size: 3.75rem;
       line-height: 8vw;
+      padding-bottom: 0;
     }
 
     @include desktop {
@@ -100,12 +103,13 @@
 
   &__soundCloud {
     width: 100%;
+    height: 50%;
     padding: 1rem 0;
 
     @include tablet {
-      width: 55%;
+      width: 60%;
       height: 40%;
-      padding: 2rem 0 0;
+      padding: 0;
     }
 
     @include desktop {
@@ -116,40 +120,74 @@
 }
 
 .shows {
-  @include flex-center(column, flex-start, flex-start);
+  @include flex-center(column, center, flex-start);
   padding: 1rem 0; 
 
+  @include tablet {
+  padding: 1rem;
+  }
+
   &__header {
-    padding: 1.25rem 1.25rem 0;
+    padding: 1.25rem 1rem 0;
     font-size: 2rem;
     font-weight: 600;
+
+    &-list {
+      display: none;
+ 
+      @include tablet {
+        @include flex-center(row, space-between, flex-start);
+        width: 68.75%;
+        padding: 2rem 1.1rem 0;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $color-silver;
+        flex: 1;
+
+        &-item {
+          flex: 1;
+          padding-right: 8rem;
+        }
+      }
+    }
   }
   &__container {
     width: 100%;
-    padding: 1.5rem 1.25rem;
+    padding: 0.25rem 1.25rem;
     &-top{
       height: 100%;
-      padding: 0;
+      padding: 1rem 0 0;
+
+      @include tablet {
+        @include flex-center(row, space-between);
+      }
     }
   }
 
   &__list {
-      padding: 0 0 1rem;
+
+    @include tablet {
+      @include flex-center(row, space-between, flex-start);
+      flex: 1;
+      padding-right: 1.5rem;
+    }
    
     &-item { 
-      height: 100%;
-      // @include flex-center(column, flex-start, space-between);
-      // margin: 0 0 4rem;
       padding: 0.5rem 0;
+      flex: 1;
+      // @include flex-center(column, flex-start, space-between);
 
       &-title {
         font-size: 0.875rem;
         font-weight: 600;
         color: $color-silver;
+
+        @include tablet {
+          display: none;
+        }
       }
 
       &-content { 
-        padding-bottom: 4rem;
         font-size: 1.25rem;
         
 
@@ -157,33 +195,31 @@
           font-weight: 600;
         }
       }
+
+      // &--first {
+      //   @include tablet {
+      //     display: block;
+      //   }
+      // }
     }
   }
 
   &__button {
-    @include flex-center;
-      margin: 0 auto;
-      width: 100%;
-      padding: 1rem 0;
-      border-radius: 0.3125rem;
-      color: $color-white;
-      background-color: $color-bandSite-black;
-      font-weight: 600;
-      font-size: 1.125rem;
-      font-family: "Avenir", sans-serif;
-      transition: all 0.2s ease;
+    @include button-style;
+      margin: 1rem 0 0 ;
 
-      &:hover {
-        background-color: darken($color-bandSite-black, 15%);
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px $color-bandSite-black, 0.5;
+      @include tablet {
+        margin: 0;
+        width: 30%;
       }
   }
 
   &__line-break {
     @include line-break;
+
+    @include tablet {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }

@@ -276,12 +276,11 @@ button {
 }
 @media (min-width: 48rem) and (min-width: 48rem) {
   .footer__container-middle {
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
-    width: 90%;
+    width: 100%;
   }
 }
 .footer__header {
@@ -812,10 +811,6 @@ button {
   align-items: center;
 }
 .conversation__submit-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   padding: 1rem 0;
   border-radius: 0.3125rem;
@@ -837,7 +832,7 @@ button {
   .conversation__submit-button {
     width: 25%;
     font-size: 1rem;
-    padding: 0.75rem 0.25rem;
+    padding: 0.75rem 0.25rem 0.5rem;
   }
 }
 .conversation-post__container {

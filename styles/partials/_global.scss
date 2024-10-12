@@ -220,9 +220,8 @@ button {
         @include flex-center(row, space-between);
 
         @include tablet {
-          flex: 1;
           @include flex-center(row, flex-start, flex-end);
-          width: 90%;
+          width: 100%;
         }
       }
     }
