@@ -34,9 +34,7 @@ let shows = [
 const showsSection = document.querySelector(".shows");
 
 const loopAndAppendShows = (items) => {
-  
   items.forEach((item) => {
-    
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
     const showsContainerTop = document.createElement("div");
@@ -49,15 +47,16 @@ const loopAndAppendShows = (items) => {
     showsListItem.classList.add("shows__list-item");
 
     const showsDateTitle = document.createElement("h2");
-    showsDateTitle.classList.add("shows__date-title");
+    showsDateTitle.classList.add("shows__list-item-title");
     showsDateTitle.innerText = "DATE";
 
     const listItemDate = document.createElement("span");
-    listItemDate.classList.add("shows__list-item-contnet--bold");
+    listItemDate.classList.add("shows__list-item-content");
+    listItemDate.classList.add("shows__list-item-content--bold");
     listItemDate.innerText = item.date;
 
     const showsVenueTitle = document.createElement("h2");
-    showsVenueTitle.classList.add("shows__venue-title");
+    showsVenueTitle.classList.add("shows__list-item-title");
     showsVenueTitle.innerText = "VENUE";
 
     const listItemVenue = document.createElement("span");
@@ -65,7 +64,7 @@ const loopAndAppendShows = (items) => {
     listItemVenue.innerText = item.venue;
 
     const showsLocationTitle = document.createElement("h2");
-    showsLocationTitle.classList.add("shows__location-title");
+    showsLocationTitle.classList.add("shows__list-item-title");
     showsLocationTitle.innerText = "LOCATION";
 
     const listItemLocation = document.createElement("span");
@@ -73,7 +72,7 @@ const loopAndAppendShows = (items) => {
     listItemLocation.innerText = item.location;
 
     const buyTicketsButton = document.createElement("button");
-    buyTicketsButton.classList.add("shows__button-buy-tickets");
+    buyTicketsButton.classList.add("shows__button");
     buyTicketsButton.innerText = "BUY TICKETS";
 
     const lineBreak = document.createElement("div");
@@ -83,14 +82,16 @@ const loopAndAppendShows = (items) => {
     showsContainer.appendChild(showsContainerTop);
     showsContainerTop.appendChild(showsList);
     showsList.appendChild(showsListItem);
+
     showsListItem.appendChild(showsDateTitle);
     showsListItem.appendChild(listItemDate);
+    showsListItem.appendChild(showsVenueTitle);
+    showsListItem.appendChild(listItemVenue);
+    showsListItem.appendChild(showsLocationTitle);
+    showsListItem.appendChild(listItemLocation);
 
-    showsListItem.appendChild(showsVenueTitle)
-    showsListItem.appendChild(listItemVenue)
-    showsListItem.appendChild(showsLocationTitle)
-    showsListItem.appendChild(listItemLocation)
-
+    showsContainer.appendChild(buyTicketsButton);
+    
     showsSection.appendChild(lineBreak);
   });
 };

@@ -811,7 +811,7 @@ button {
   justify-content: flex-end;
   align-items: center;
 }
-.conversation__submit-btn {
+.conversation__submit-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -826,15 +826,15 @@ button {
   font-family: "Avenir", sans-serif;
   transition: all 0.2s ease;
 }
-.conversation__submit-btn:hover {
+.conversation__submit-button:hover {
   background-color: #0c0c0c;
 }
-.conversation__submit-btn:focus {
+.conversation__submit-button:focus {
   outline: none;
   box-shadow: 0 0 0 2px #323232, 0.5;
 }
 @media (min-width: 48rem) {
-  .conversation__submit-btn {
+  .conversation__submit-button {
     width: 25%;
     font-size: 1rem;
     padding: 0.75rem 0.25rem;
