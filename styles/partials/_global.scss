@@ -165,7 +165,7 @@ button {
       @include desktop {
         font-size: 1rem;
         padding: 0;
-        margin: 0 1rem;
+        margin: 0 1.5rem;
       }
 
       &:hover {
@@ -244,13 +244,10 @@ button {
     padding: 0.5rem 0;
 
     @include tablet {
-      @include flex-center(row, space-between, baseline);
-      width: 20%;
+      @include flex-center(row, space-around, baseline);
+      width: 30%;
+      max-width: 30%;
       padding-left: 3rem;
-    }
-
-    @include desktop {
-      width: 15%;
     }
 
     &-img {

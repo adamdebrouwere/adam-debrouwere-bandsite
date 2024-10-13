@@ -8,30 +8,37 @@
   width: 100%;
   height: 80vw;
 
+  @include desktop {
+    height: 45vw;
+  }
+
   &__container {
-    width: 100%;
+    @include flex-center(row, center, start);
     height: 100%;
+    width: 100%;
+    
     overflow: hidden;
 
-    @include flex-center(column, center, start);
-
     @include desktop {
-      height: 50vw;
+      padding-bottom: 8rem;
     }
   }
 
   &__img {
     width: 100%;
-    height: 100vw;
+    height: auto;
     object-fit: cover;
     object-position: top;
 
     @include tablet {
-      object-position: left;
+      object-position: top;
     }
 
     @include desktop {
-      object-position: top;
+
+      // object-position: 50% 10%; 
+      
+      // transform: translateY(4rem)
     }
   }
   &__overlay {
@@ -95,6 +102,7 @@
     }
 
     @include desktop {
+      width: 90%;
       font-size: 5rem;
       padding: 0.5rem 0;
       line-height: 5.5rem;
@@ -113,7 +121,7 @@
     }
 
     @include desktop {
-      width: 65%;
+      width: 70%;
       height: 50%;
     }
   }
@@ -127,10 +135,18 @@
   padding: 1rem;
   }
 
+  @include desktop {
+    @include flex-center(row, center, flex-start)
+  }
+
   &__header {
     padding: 1.25rem 1rem 0;
     font-size: 2rem;
     font-weight: 600;
+
+    @include desktop {
+      padding: 1rem 7rem;
+    }
 
     &-list {
       display: none;
@@ -151,6 +167,11 @@
       }
     }
   }
+
+  &__display {
+    width: 100%;
+  }
+
   &__container {
     width: 100%;
     padding: 0.25rem 1.25rem;
@@ -189,6 +210,11 @@
 
       &-content { 
         font-size: 1.25rem;
+
+        @include tablet {
+          font-size: 1rem;
+      
+        }
         
 
         &--bold {
