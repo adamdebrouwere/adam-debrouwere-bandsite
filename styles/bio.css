@@ -884,7 +884,8 @@ button {
 .conversation-post__line-break {
   width: 100%;
   padding: 0.5rem;
-  border-bottom: 0.15rem solid #e1e1e1;
+  border-bottom: 0.115rem inset #e1e1e1;
+  filter: blur(0.03rem);
 }
 @media (min-width: 48rem) {
   .conversation-post__line-break-top {

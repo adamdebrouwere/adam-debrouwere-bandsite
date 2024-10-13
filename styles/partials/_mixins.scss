@@ -61,6 +61,6 @@
 @mixin line-break {
     width: 100%;
     padding: 0.5rem;
-    border-bottom: 0.15rem solid $color-mercury;
-
+    border-bottom: 0.115rem inset $color-mercury;
+    filter: blur(0.03rem);
 }

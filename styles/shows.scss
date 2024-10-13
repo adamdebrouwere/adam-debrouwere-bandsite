@@ -136,6 +136,7 @@
   }
 
   @include desktop {
+    padding: 4rem 10rem;
     @include flex-center(row, center, flex-start)
   }
 
@@ -144,8 +145,15 @@
     font-size: 2rem;
     font-weight: 600;
 
+    @include tablet {
+      padding: 2rem 4.5rem;
+    }
+
     @include desktop {
-      padding: 1rem 7rem;
+      font-size: 3rem;
+      align-self: flex-start;
+      
+      padding: 1rem 7rem 0 0;
     }
 
     &-list {
@@ -153,8 +161,8 @@
  
       @include tablet {
         @include flex-center(row, space-between, flex-start);
-        width: 68.75%;
-        padding: 2rem 1.1rem 0;
+        width: 49vw;
+        padding: 2rem 1.1rem 0 2rem;;
         font-size: 0.875rem;
         font-weight: 600;
         color: $color-silver;
@@ -162,7 +170,6 @@
 
         &-item {
           flex: 1;
-          padding-right: 8rem;
         }
       }
     }
@@ -170,6 +177,14 @@
 
   &__display {
     width: 100%;
+
+    @include tablet {
+      padding-left: 4rem;
+    }
+    @include desktop {
+      padding-left: 0;
+    }
+    
   }
 
   &__container {
@@ -181,6 +196,16 @@
 
       @include tablet {
         @include flex-center(row, space-between);
+      }
+
+      @include desktop {
+        padding: 0.5rem 0.75rem;
+        margin: 0.25rem 0;
+        transition: all 0.5s ease;
+        
+        &:hover {
+          background-color: lighten($color-mercury, 15%); 
+        }
       }
     }
   }
@@ -206,6 +231,10 @@
         @include tablet {
           display: none;
         }
+
+        &--on {
+          display: block;
+        }
       }
 
       &-content { 
@@ -215,7 +244,6 @@
           font-size: 1rem;
       
         }
-        
 
         &--bold {
           font-weight: 600;
@@ -232,20 +260,41 @@
 
   &__button {
     @include button-style;
-      margin: 1rem 0 0 ;
+      margin: 1rem 0 0;
+
+      // &-container {
+      //   display: block;
+      // }
+
+      &--off {
+        background-color: white;
+        // display: none;
+      }
 
       @include tablet {
         margin: 0;
         width: 30%;
+      }
+      
+      @include desktop {
+        width: 20%;
       }
   }
 
   &__line-break {
     @include line-break;
 
+    &--off {
+      display: none;
+    }
+
     @include tablet {
       width: 100%;
       margin: 0 auto;
+    }
+
+    @include desktop {
+      padding: 0;
     }
   }
 }

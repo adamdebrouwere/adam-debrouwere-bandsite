@@ -1,5 +1,10 @@
 let shows = [
   {
+    date: "DATE",
+    venue: "VENUE",
+    location: "LOCATION",
+  },
+  {
     date: "Mon Sept 09 2024",
     venue: "Ronald Lane",
     location: "San Francisco, CA",
@@ -40,30 +45,18 @@ showsSection.appendChild(showsHeader);
 
 const showsDisplay = document.createElement("div");
 showsDisplay.classList.add("shows__display");
-showsSection.appendChild(showsDisplay)
-
-const showsHeaderList = document.createElement("ul");
-showsHeaderList.classList.add("shows__header-list");
-
-const showsHeaderListItem1 = document.createElement("li");
-showsHeaderListItem1.classList.add("shows__header-list-item");
-const showsHeaderListItem2 = document.createElement("li");
-showsHeaderListItem2.classList.add("shows__header-list-item");
-const showsHeaderListItem3 = document.createElement("li");
-showsHeaderListItem3.classList.add("shows__header-list-item");
-
-showsHeaderListItem1.innerText = "DATE";
-showsHeaderList.appendChild(showsHeaderListItem1);
-showsHeaderListItem2.innerText = "VENUE";
-showsHeaderList.appendChild(showsHeaderListItem2);
-showsHeaderListItem3.innerText = "LOCATION";
-showsHeaderList.appendChild(showsHeaderListItem3);
-
-showsDisplay.appendChild(showsHeaderList);
+showsSection.appendChild(showsDisplay);
 
 const loopAndAppendShows = (items) => {
+  showsDisplay.innerHTML = "";
 
-  items.forEach((item) => {
+  const isMobile = window.innerWidth < 768;
+
+  console.log(isMobile);
+
+  items.forEach((item, index) => {
+    // if (!isMobile && index > 0) {
+
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
 
@@ -73,11 +66,12 @@ const loopAndAppendShows = (items) => {
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
 
-    const buyTicketsButton = document.createElement("button");
-    buyTicketsButton.classList.add("shows__button");
-    buyTicketsButton.innerText = "BUY TICKETS";
-
-    const createListItem = (title, content, isBold = false) => {
+    const createListItem = (
+      title,
+      content,
+      isBold = false,
+      isHeader = false
+    ) => {
       const showsListItem = document.createElement("li");
       showsListItem.classList.add("shows__list-item");
 
@@ -92,6 +86,12 @@ const loopAndAppendShows = (items) => {
         showsListItemContent.classList.add("shows__list-item-content--bold");
       }
 
+      if (isHeader && index == 0 ) {
+        showsListItemContent.removeAttribute("class");
+        showsListItemContent.classList.add("shows__list-item-title")
+        showsListItemContent.classList.add("shows__list-item-title--on");
+      }
+
       showsListItemContent.innerText = content;
 
       showsListItem.appendChild(showsListItemTitle);
@@ -100,20 +100,47 @@ const loopAndAppendShows = (items) => {
       return showsListItem;
     };
 
-    showsList.appendChild(createListItem("DATE", item.date, true, true));
-    showsList.appendChild(createListItem("VENUE", item.venue));
-    showsList.appendChild(createListItem("LOCATION", item.location));
+    if (!isMobile || index > 0) {
+      showsList.appendChild(
+        createListItem("DATE", item.date, true, isMobile ? false : true)
+      );
+      showsList.appendChild(
+        createListItem("VENUE", item.venue, false, isMobile ? false : true)
+      );
+      showsList.appendChild(
+        createListItem(
+          "LOCATION",
+          item.location,
+          false,
+          isMobile ? false : true
+        )
+      );
 
-    showsContainerTop.appendChild(showsList);
-    showsContainerTop.appendChild(buyTicketsButton);
-    showsContainer.appendChild(showsContainerTop);
+      const lineBreak = document.createElement("div");
+      lineBreak.classList.add("shows__line-break");
 
-    showsDisplay.appendChild(showsContainer);
+      const buyTicketsButton = document.createElement("button");
+      buyTicketsButton.classList.add("shows__button");
+      buyTicketsButton.innerText = "BUY TICKETS";
 
-    const lineBreak = document.createElement("div");
-    lineBreak.classList.add("shows__line-break");
-    showsDisplay.appendChild(lineBreak);
+      if (index === 0) {
+        buyTicketsButton.classList.add("shows__button--off");
+        lineBreak.classList.add("shows__line-break--off");
+      }
+
+      showsContainerTop.appendChild(showsList);
+      showsContainerTop.appendChild(buyTicketsButton);
+
+      showsContainer.appendChild(showsContainerTop);
+      showsDisplay.appendChild(showsContainer);
+
+      showsDisplay.appendChild(lineBreak);
+    }
   });
 };
 
 loopAndAppendShows(shows);
+
+window.addEventListener("resize", () => {
+  loopAndAppendShows(shows);
+});

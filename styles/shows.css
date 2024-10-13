@@ -559,6 +559,7 @@ button {
 }
 @media (min-width: 80rem) {
   .shows {
+    padding: 4rem 10rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -570,9 +571,16 @@ button {
   font-size: 2rem;
   font-weight: 600;
 }
+@media (min-width: 48rem) {
+  .shows__header {
+    padding: 2rem 4.5rem;
+  }
+}
 @media (min-width: 80rem) {
   .shows__header {
-    padding: 1rem 7rem;
+    font-size: 3rem;
+    align-self: flex-start;
+    padding: 1rem 7rem 0 0;
   }
 }
 .shows__header-list {
@@ -584,8 +592,8 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    width: 68.75%;
-    padding: 2rem 1.1rem 0;
+    width: 49vw;
+    padding: 2rem 1.1rem 0 2rem;
     font-size: 0.875rem;
     font-weight: 600;
     color: #afafaf;
@@ -593,11 +601,20 @@ button {
   }
   .shows__header-list-item {
     flex: 1;
-    padding-right: 8rem;
   }
 }
 .shows__display {
   width: 100%;
+}
+@media (min-width: 48rem) {
+  .shows__display {
+    padding-left: 4rem;
+  }
+}
+@media (min-width: 80rem) {
+  .shows__display {
+    padding-left: 0;
+  }
 }
 .shows__container {
   width: 100%;
@@ -613,6 +630,16 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+}
+@media (min-width: 80rem) {
+  .shows__container-top {
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    transition: all 0.5s ease;
+  }
+  .shows__container-top:hover {
+    background-color: white;
   }
 }
 @media (min-width: 48rem) {
@@ -638,6 +665,9 @@ button {
   .shows__list-item-title {
     display: none;
   }
+}
+.shows__list-item-title--on {
+  display: block;
 }
 .shows__list-item-content {
   font-size: 1.25rem;
@@ -669,20 +699,37 @@ button {
   outline: none;
   box-shadow: 0 0 0 2px #323232, 0.5;
 }
+.shows__button--off {
+  background-color: white;
+}
 @media (min-width: 48rem) {
   .shows__button {
     margin: 0;
     width: 30%;
   }
 }
+@media (min-width: 80rem) {
+  .shows__button {
+    width: 20%;
+  }
+}
 .shows__line-break {
   width: 100%;
   padding: 0.5rem;
-  border-bottom: 0.15rem solid #e1e1e1;
+  border-bottom: 0.115rem inset #e1e1e1;
+  filter: blur(0.03rem);
+}
+.shows__line-break--off {
+  display: none;
 }
 @media (min-width: 48rem) {
   .shows__line-break {
     width: 100%;
     margin: 0 auto;
+  }
+}
+@media (min-width: 80rem) {
+  .shows__line-break {
+    padding: 0;
   }
 }/*# sourceMappingURL=shows.css.map */
