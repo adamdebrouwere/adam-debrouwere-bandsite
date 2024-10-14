@@ -107,7 +107,7 @@ button {
     @include flex-center(column);
     padding: 1rem 0 0 0;
 
-    @include tablet { 
+    @include tablet {
       @include flex-center(row, space-between);
       height: 100%;
       width: 50%;
@@ -263,7 +263,7 @@ button {
 
   &__booking {
     padding: 0.5rem 0 0.25rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
     width: 100%;
     flex: 1 1 30%;
 
@@ -281,7 +281,6 @@ button {
 
       @include tablet {
         padding: 1rem 0;
-        
       }
     }
     &-address {

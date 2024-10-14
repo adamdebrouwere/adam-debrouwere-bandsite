@@ -52,16 +52,26 @@ const loopAndAppendShows = (items) => {
 
   const isMobile = window.innerWidth < 768;
 
-  console.log(isMobile);
+  let selected = null;
+
 
   items.forEach((item, index) => {
-    // if (!isMobile && index > 0) {
-
     const showsContainer = document.createElement("div");
     showsContainer.classList.add("shows__container");
 
     const showsContainerTop = document.createElement("div");
     showsContainerTop.classList.add("shows__container-top");
+
+    showsContainerTop.addEventListener("click", () => {
+      if (
+        selected
+      ) {
+        showsContainerTop.classList.remove("shows__container-top--darken");
+      } else {
+        showsContainerTop.classList.add("shows__container-top--darken");
+        selected = showsContainerTop;
+      }
+    });
 
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
@@ -86,9 +96,10 @@ const loopAndAppendShows = (items) => {
         showsListItemContent.classList.add("shows__list-item-content--bold");
       }
 
-      if (isHeader && index == 0 ) {
+      if (isHeader && index == 0) {
+        showsContainerTop.classList.add("shows__container-top--off");
         showsListItemContent.removeAttribute("class");
-        showsListItemContent.classList.add("shows__list-item-title")
+        showsListItemContent.classList.add("shows__list-item-title");
         showsListItemContent.classList.add("shows__list-item-title--on");
       }
 

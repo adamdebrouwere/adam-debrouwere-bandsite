@@ -683,9 +683,11 @@ button {
     padding: 0.75rem 0;
   }
 }
-.gallery__img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.1);
+@media (min-width: 80rem) {
+  .gallery__img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
 }
 
 .conversation {
