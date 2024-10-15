@@ -76,6 +76,18 @@ const loopAndAppendShows = (items) => {
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
 
+    // class ListItem {
+    //   constructor(title, content) {
+    //     this.title = title;
+    //     this.content = content;
+    //   }
+
+    //   const isBold = () => {
+    //     if (isBold) {
+    //       showsListItemContent.classList.add("shows__list-item-content--bold");
+    //     }
+    //   }
+    // }
     const createListItem = (
       title,
       content,
