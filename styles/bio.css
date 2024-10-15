@@ -673,8 +673,6 @@ button {
   position: relative;
   width: 100%;
   padding: 0.5rem 0;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.5s ease;
   overflow: hidden;
 }
 @media (min-width: 48rem) {
@@ -684,6 +682,10 @@ button {
   }
 }
 @media (min-width: 80rem) {
+  .gallery__img {
+    transition: filter 0.5s ease, transform 0.5s ease;
+    filter: grayscale(100%);
+  }
   .gallery__img:hover {
     filter: grayscale(0%);
     transform: scale(1.1);
