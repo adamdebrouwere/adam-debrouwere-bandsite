@@ -97,8 +97,17 @@ const loopAndAppend = (items) => {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("conversation-post__delete-btn");
-    deleteBtn.innerText = "DELETE COMMENT";
+    deleteBtn.innerText = "DELETE";
     deleteBtn.setAttribute("data-id", item.id);
+
+    const likeBtn = document.createElement("button");
+    likeBtn.classList.add("conversation-post__like-btn");
+    likeBtn.innerText = "LIKE";
+    likeBtn.setAttribute("data-id", item.id);
+
+    const likeCounter = document.createElement("span");
+    likeCounter.classList.add("conversation-post__like-counter");
+    likeCounter.innerText = item.likes;
 
     const lineBreak = document.createElement("div");
     lineBreak.classList.add("conversation-post__line-break");
@@ -112,16 +121,17 @@ const loopAndAppend = (items) => {
     commentPostsRightTop.appendChild(name);
     commentPostsRightTop.appendChild(postedTime);
     commentPostsRightBottom.appendChild(comment);
+    commentPostsRightBottom.appendChild(likeCounter);commentPostsRightBottom.appendChild(likeBtn);
     commentPostsRightBottom.appendChild(deleteBtn);
     commentPosts.appendChild(lineBreak);
 
     deleteBtn.addEventListener("click", async () => {
+      const id = deleteBtn.getAttribute("data-id");
+      
       const confirmed =  confirm("Are you sure you want to delete this comment?");
-
       if (!confirmed) {
         return;
       }
-      const id = deleteBtn.getAttribute("data-id");
 
       try {
         await bandSiteApi.deleteComment(id);
@@ -131,6 +141,23 @@ const loopAndAppend = (items) => {
         console.error("error deleting comment", error);
       }
     });
+    
+    likeBtn.addEventListener("click", async () => {
+        const id = likeBtn.getAttribute("data-id");
+        
+        const confirmed =  confirm("Are you sure you want to like this comment?");
+        if (!confirmed) {
+          return;
+        }
+  
+        try {
+          await bandSiteApi.likeComment(id);
+          const updatedComments = await bandSiteApi.getComments();
+          loopAndAppend(updatedComments);
+        } catch (error) {
+          console.error("Error liking comment", error);
+        }
+      });
   });
 };
 

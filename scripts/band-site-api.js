@@ -50,10 +50,15 @@ class BandSiteApi {
     }
   }
 
-  // async likeComment(id) {
-  //     const response = await axios.put(`${this.baseUrl}comments/:${id}/like${this.apiKey}`);
-  //     response
-  // }
+  async likeComment(id) {
+    try {
+        const response = await axios.put(`${this.baseUrl}comments/${id}/like?api_key=${this.apiKey}`);
+      return response;
+    } catch (error) {
+        console.error("Error liking comment", error);
+    }
+  }
+
   async deleteComment(id) {
     try {
         const response = await axios.delete(`${this.baseUrl}comments/${id}?api_key=${this.apiKey}`);
