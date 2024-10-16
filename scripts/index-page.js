@@ -14,122 +14,132 @@
 //     }
 // ]
 
-const commentsForm = document.querySelector(".conversation__form")
+const commentsForm = document.querySelector(".conversation__form");
 const commentPosts = document.querySelector(".conversation-post__container");
 
-
-
 commentsForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = event.target.name.value;
-    const comment = event.target.comment.value;
-    
-    
-    if(!(name && comment)) {
-        alert("Please input name and comment.");
-        return;
-    }
+  const name = event.target.name.value;
+  const comment = event.target.comment.value;
 
-    // const newComment = {
-    //     // posted: new Date (Date.now()).toLocaleDateString(),
-    //     name: name
-    //     comment: event.target.comment.value
-    // }
+  if (!(name && comment)) {
+    alert("Please input name and comment.");
+    return;
+  }
 
-    // comments.unshift(newComment)
-    try {
-        await bandSiteApi.postComment(name, comment);
-        const displayComment = await bandSiteApi.getComments();
+  // const newComment = {
+  //     // posted: new Date (Date.now()).toLocaleDateString(),
+  //     name: name
+  //     comment: event.target.comment.value
+  // }
 
-        loopAndAppend(displayComment);
+  // comments.unshift(newComment)
+  try {
+    await bandSiteApi.postComment(name, comment);
+    const displayComment = await bandSiteApi.getComments();
 
-        event.target.name.value = "";
-        event.target.comment.value = "";
-    } catch (error) {
-        console.error("Error posting comment", error);
-    }
-})
+    loopAndAppend(displayComment);
+
+    event.target.name.value = "";
+    event.target.comment.value = "";
+  } catch (error) {
+    console.error("Error posting comment", error);
+  }
+});
 
 const loopAndAppend = (items) => {
-    commentPosts.innerText = "";
+  commentPosts.innerText = "";
 
-    items.forEach(item => {
-        const commentPostsContent = document.createElement("div");
-        commentPostsContent.classList.add("conversation-post__content");
-        
-        const commentPostsLeft = document.createElement("div");
-        commentPostsLeft.classList.add("conversation-post__content-left");
+  items.forEach((item) => {
+    const commentPostsContent = document.createElement("div");
+    commentPostsContent.classList.add("conversation-post__content");
 
-        const commentPostsRight = document.createElement("div");
-        commentPostsRight.classList.add("conversation-post__content-right");
-        
-        const commentPostsRightTop = document.createElement("div");
-        commentPostsRightTop.classList.add("conversation-post__content-right-top");
+    const commentPostsLeft = document.createElement("div");
+    commentPostsLeft.classList.add("conversation-post__content-left");
 
-        const commentPostsRightBottom = document.createElement("div");
-        commentPostsRightBottom.classList.add("conversation-post__content-right-bottom")
+    const commentPostsRight = document.createElement("div");
+    commentPostsRight.classList.add("conversation-post__content-right");
 
-        const profilePic = document.createElement('img');
-        profilePic.classList.add("conversation-post__profile-pic")
-        profilePic.alt = `${item.name}'s profile picture`;
-        
-        const postedTime = document.createElement('span');
-        postedTime.classList.add("conversation-post__posted");
-        const date = new Date(item.timestamp);
-        const options = {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZoneName: "short"
-        };
+    const commentPostsRightTop = document.createElement("div");
+    commentPostsRightTop.classList.add("conversation-post__content-right-top");
 
-        postedTime.innerText = date.toLocaleString(undefined, options);
+    const commentPostsRightBottom = document.createElement("div");
+    commentPostsRightBottom.classList.add(
+      "conversation-post__content-right-bottom"
+    );
 
-        
-        const name = document.createElement('p');
-        name.classList.add("conversation-post__name");
-        name.innerText = item.name;
-        
-        const comment = document.createElement('article');
-        comment.classList.add("conversation-post__comment");
-        comment.innerText = item.comment;
+    const profilePic = document.createElement("img");
+    profilePic.classList.add("conversation-post__profile-pic");
+    profilePic.alt = `${item.name}'s profile picture`;
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.classList.add('conversation-post__delete-btn');
-        deleteBtn.innerText = "DELETE COMMENT";
+    const postedTime = document.createElement("span");
+    postedTime.classList.add("conversation-post__posted");
+    const date = new Date(item.timestamp);
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZoneName: "short",
+    };
 
-        const lineBreak = document.createElement('div');
-        lineBreak.classList.add("conversation-post__line-break")
-        
-        commentPosts.appendChild(commentPostsContent);
-        commentPostsContent.appendChild(commentPostsLeft);
-        commentPostsContent.appendChild(commentPostsRight);
-        commentPostsRight.appendChild(commentPostsRightTop);
-        commentPostsRight.appendChild(commentPostsRightBottom);
-        commentPostsLeft.appendChild(profilePic);
-        commentPostsRightTop.appendChild(name);
-        commentPostsRightTop.appendChild(postedTime);
-        commentPostsRightBottom.appendChild(comment);
-        commentPostsRightBottom.appendChild(deleteBtn);
-        commentPosts.appendChild(lineBreak);
-     });
-} 
+    postedTime.innerText = date.toLocaleString(undefined, options);
 
-bandSiteApi.getComments().then(comments => {
+    const name = document.createElement("p");
+    name.classList.add("conversation-post__name");
+    name.innerText = item.name;
+
+    const comment = document.createElement("article");
+    comment.classList.add("conversation-post__comment");
+    comment.innerText = item.comment;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("conversation-post__delete-btn");
+    deleteBtn.innerText = "DELETE COMMENT";
+    deleteBtn.setAttribute("data-id", item.id);
+
+    const lineBreak = document.createElement("div");
+    lineBreak.classList.add("conversation-post__line-break");
+
+    commentPosts.appendChild(commentPostsContent);
+    commentPostsContent.appendChild(commentPostsLeft);
+    commentPostsContent.appendChild(commentPostsRight);
+    commentPostsRight.appendChild(commentPostsRightTop);
+    commentPostsRight.appendChild(commentPostsRightBottom);
+    commentPostsLeft.appendChild(profilePic);
+    commentPostsRightTop.appendChild(name);
+    commentPostsRightTop.appendChild(postedTime);
+    commentPostsRightBottom.appendChild(comment);
+    commentPostsRightBottom.appendChild(deleteBtn);
+    commentPosts.appendChild(lineBreak);
+
+    deleteBtn.addEventListener("click", async () => {
+      const confirmed =  confirm("Are you sure you want to delete this comment?");
+
+      if (!confirmed) {
+        return;
+      }
+      const id = deleteBtn.getAttribute("data-id");
+
+      try {
+        await bandSiteApi.deleteComment(id);
+        const updatedComments = await bandSiteApi.getComments();
+        loopAndAppend(updatedComments);
+      } catch (error) {
+        console.error("error deleting comment", error);
+      }
+    });
+  });
+};
+
+bandSiteApi
+  .getComments()
+  .then((comments) => {
     loopAndAppend(comments);
-}).catch(error => console.error("error fetching comments", error));
-
-
-
-
-
-
-
-
-
+  })
+  .catch((error) => console.error("error getting comments", error));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const galleryImg = document.querySelectorAll('.gallery__img');
@@ -137,7 +147,6 @@ bandSiteApi.getComments().then(comments => {
 //         const mask = document.createElement('div');
 //         mask.classList.add('gallery__mask');
 //         img.parentElement.appendChild(mask);
-
 
 //         img.addEventListener('mouseenter', (event) => {
 //             const rect = img.getBoundingClientRect();
@@ -151,4 +160,4 @@ bandSiteApi.getComments().then(comments => {
 //             mask.style.background = 'rgba(255, 255, 255, 0)';
 //         })
 //     })
-// }) 
+// })
