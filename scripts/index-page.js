@@ -1,19 +1,3 @@
-// let comments = [
-//     {
-//         posted: "11/02/2023",
-//         name:"Victor Pinto",
-//         description: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciat this for what it is and what it contains."
-//     },
-//     {   posted: "10/28/2023",
-//         name:"Christina Cabrera",
-//         description: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
-//     },
-//     {   posted: "10/20/2023",
-//         name:"Isaac Tadesse",
-//         description: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-//     }
-// ]
-
 const commentsForm = document.querySelector(".conversation__form");
 const commentPosts = document.querySelector(".conversation-post__container");
 
@@ -27,14 +11,6 @@ commentsForm.addEventListener("submit", async (event) => {
     alert("Please input name and comment.");
     return;
   }
-
-  // const newComment = {
-  //     // posted: new Date (Date.now()).toLocaleDateString(),
-  //     name: name
-  //     comment: event.target.comment.value
-  // }
-
-  // comments.unshift(newComment)
   try {
     await bandSiteApi.postComment(name, comment);
     const displayComment = await bandSiteApi.getComments();
@@ -85,6 +61,7 @@ const loopAndAppend = (items) => {
       timeZoneName: "short",
     };
 
+
     postedTime.innerText = date.toLocaleString(undefined, options);
 
     const name = document.createElement("p");
@@ -95,19 +72,22 @@ const loopAndAppend = (items) => {
     comment.classList.add("conversation-post__comment");
     comment.innerText = item.comment;
 
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("conversation-post__button-container");
+
     const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("conversation-post__delete-btn");
+    deleteBtn.classList.add("conversation-post__btn", "conversation-post__btn--red");
     deleteBtn.innerText = "DELETE";
     deleteBtn.setAttribute("data-id", item.id);
 
     const likeBtn = document.createElement("button");
-    likeBtn.classList.add("conversation-post__like-btn");
+    likeBtn.classList.add("conversation-post__btn", "conversation-post__btn--blue");
     likeBtn.innerText = "LIKE";
     likeBtn.setAttribute("data-id", item.id);
 
     const likeCounter = document.createElement("span");
     likeCounter.classList.add("conversation-post__like-counter");
-    likeCounter.innerText = item.likes;
+    likeCounter.innerText = `Likes: ${item.likes}`;
 
     const lineBreak = document.createElement("div");
     lineBreak.classList.add("conversation-post__line-break");
@@ -121,8 +101,11 @@ const loopAndAppend = (items) => {
     commentPostsRightTop.appendChild(name);
     commentPostsRightTop.appendChild(postedTime);
     commentPostsRightBottom.appendChild(comment);
-    commentPostsRightBottom.appendChild(likeCounter);commentPostsRightBottom.appendChild(likeBtn);
-    commentPostsRightBottom.appendChild(deleteBtn);
+  
+    buttonContainer.appendChild(likeCounter);
+    buttonContainer.appendChild(likeBtn);
+    buttonContainer.appendChild(deleteBtn);
+    commentPostsRightBottom.appendChild(buttonContainer);
     commentPosts.appendChild(lineBreak);
 
     deleteBtn.addEventListener("click", async () => {
@@ -144,11 +127,6 @@ const loopAndAppend = (items) => {
     
     likeBtn.addEventListener("click", async () => {
         const id = likeBtn.getAttribute("data-id");
-        
-        const confirmed =  confirm("Are you sure you want to like this comment?");
-        if (!confirmed) {
-          return;
-        }
   
         try {
           await bandSiteApi.likeComment(id);
@@ -167,24 +145,3 @@ bandSiteApi
     loopAndAppend(comments);
   })
   .catch((error) => console.error("error getting comments", error));
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const galleryImg = document.querySelectorAll('.gallery__img');
-//     galleryImg.forEach(img => {
-//         const mask = document.createElement('div');
-//         mask.classList.add('gallery__mask');
-//         img.parentElement.appendChild(mask);
-
-//         img.addEventListener('mouseenter', (event) => {
-//             const rect = img.getBoundingClientRect();
-//             const mouseX = event.clientX - rect.left;
-//             const mouseY = event.clientY - rect.top;
-
-//             mask.style.background = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 60%)`;
-//         })
-
-//         img.addEventListener('mouseleave', () => {
-//             mask.style.background = 'rgba(255, 255, 255, 0)';
-//         })
-//     })
-// })
