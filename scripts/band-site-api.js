@@ -46,7 +46,7 @@ class BandSiteApi {
       console.log(response.data);
       return response.data;
     } catch (error) {
-      console.error("Error getting showdates", error);
+      console.error("Error getting show dates", error);
     }
   }
 
@@ -100,6 +100,3 @@ async function postCommentData(name, comment) {
   }
 }
 
-// getShowsData();
-// getCommentsData();
-// postCommentData("james","welcome")
