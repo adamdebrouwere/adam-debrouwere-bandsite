@@ -638,7 +638,6 @@ button {
 @media (min-width: 48rem) {
   .shows__header-row-dummy-btn {
     display: flex;
-    background-color: #ffffff;
     width: 30%;
   }
 }
@@ -674,7 +673,7 @@ button {
   }
   .shows__container-top--darken {
     border-radius: 0.5rem;
-    background-color: #e1e1e1;
+    background-color: #d4d4d4;
   }
   .shows__container-top:hover {
     border-radius: 0.5rem;
@@ -738,11 +737,7 @@ button {
   outline: none;
   box-shadow: 0 0 0 2px #323232, 0.5;
 }
-.shows__button--off {
-  background-color: #ffffff;
-  pointer-events: none;
-}
-.shows__button--off:hover {
+.shows__button:hover {
   background-color: #ffffff;
 }
 @media (min-width: 48rem) {

@@ -169,18 +169,17 @@
           @include flex-center(row, space-between);
           width: 100%;
           padding: 0.25rem 1.25rem;
-
         }
 
         @include desktop {
           padding: 0.25rem 2rem;
         }
       }
-      
+
       &-item {
-          padding: 0.25rem 0.75rem;
-          flex: 1;
-        }
+        padding: 0.25rem 0.75rem;
+        flex: 1;
+      }
 
       @include tablet {
         @include flex-center(row, space-between, flex-start);
@@ -190,23 +189,17 @@
         font-weight: 600;
         color: $color-silver;
         width: 100%;
-
-        
       }
 
       &-dummy-btn {
         display: none;
         @include tablet {
           display: flex;
-          // @include button-style;
-          background-color: $color-white;
           width: 30%;
         }
         @include desktop {
           width: 20%;
         }
-        
-        
       }
     }
   }
@@ -232,7 +225,7 @@
 
         &--darken {
           border-radius: 0.5rem;
-          background-color: $color-mercury;
+          background-color: darken($color-mercury, 5%);
         }
 
         &:hover {
@@ -286,14 +279,10 @@
     @include button-style;
     margin: 1rem 0 0;
 
-    &--off {
-      background-color: $color-white;
-      pointer-events: none;
-
       &:hover {
         background-color: $color-white;
       }
-    }
+    
 
     @include tablet {
       margin: 0;
