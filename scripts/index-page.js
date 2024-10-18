@@ -101,7 +101,6 @@ const loopAndAppend = (items) => {
     commentPostsRightTop.appendChild(name);
     commentPostsRightTop.appendChild(postedTime);
     commentPostsRightBottom.appendChild(comment);
-  
     buttonContainer.appendChild(likeCounter);
     buttonContainer.appendChild(likeBtn);
     buttonContainer.appendChild(deleteBtn);
