@@ -2,7 +2,6 @@
 @use "./variables" as *;
 @use "./typography" as *;
 
-//element defaults
 *,
 *::before,
 *::after {
@@ -21,7 +20,7 @@ a {
   text-decoration: none;
   color: $color-white;
 }
-//default text sizing
+
 b {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -153,7 +152,7 @@ button {
       font-size: 1rem;
       cursor: pointer;
       padding: 0.5rem 0;
-      transition: background-color 0.2s ease;
+      transition: border-bottom 0.2s ease;
       border-bottom: 0.25rem solid $color-bandSite-black;
 
       @include tablet {
@@ -169,9 +168,7 @@ button {
       }
 
       &:hover {
-        background-color: lighten($color-bandSite-black, 15%);
         border-bottom: 0.25rem solid $color-alabaster;
-        font-weight: 600;
 
         @include tablet {
           background-color: $color-bandSite-black;
@@ -205,10 +202,11 @@ button {
     width: 100%;
     @include flex-center(column, start, space-between);
 
-    @include tablet {
+    
       &-top {
-        width: 100%;
-        @include flex-center(row, flex-start);
+        @include tablet {
+          @include flex-center();
+        }
 
         @include desktop {
           padding: 0 0 1rem;
@@ -216,79 +214,96 @@ button {
       }
 
       &-middle {
-        width: 100%;
-        @include flex-center(row, space-between);
+        padding: 0 0 1.5rem;
 
         @include tablet {
-          @include flex-center(row, flex-start, flex-end);
-          width: 100%;
+          width: 100%;    
+          @include flex-center(row, space-between);
+        }
+
+        @include desktop {
+          @include flex-center(row, flex-start, flex-start);
+          width: 40%;
         }
       }
-    }
   }
 
   &__header {
     padding: 0.5rem 0rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
 
     @include tablet {
       font-size: 3rem;
       padding: 1rem 0;
+      white-space: nowrap;
+    }
+    @include desktop {
+      padding: 1rem 3rem 1rem 0;
     }
   }
 
   &__logo-list {
     @include flex-center(row, space-between, start);
-    width: 90%;
+    width: 85%;
     padding: 0.5rem 0;
 
     @include tablet {
       @include flex-center(row, space-around, baseline);
-      width: 30%;
-      max-width: 30%;
-      padding-left: 3rem;
+      padding-left: 1rem;
     }
 
     &-img {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
 
       @include tablet {
         width: 1.75rem;
         height: 1.75rem;
       }
     }
+
+    &-item {
+      padding: 1.25rem;
+    }
   }
 
   &__booking {
-    padding: 0.5rem 0 0.25rem;
-    font-size: 0.875rem;
+    padding: 0.5rem 0 1.25rem;
+    font-size: 1rem;
     width: 100%;
-    flex: 1 1 30%;
 
     @include tablet {
-      font-size: 2vw;
+      font-size: 1.125rem;
+      white-space: nowrap;
     }
     @include desktop {
-      font-size: 1.5vw;
-      padding: 0 3rem 0 0;
+      font-size: 1.25rem;
+      padding: 0 5rem 0 0;
     }
 
     &-agent {
       font-weight: 600;
-      padding: 0.5rem 0 0.25rem;
+      padding: 0.5rem 0 0;
 
       @include tablet {
-        padding: 1rem 0;
+        padding: 1rem 0 0;
+      }
+    }
+
+    &-agency {
+      padding: .125rem 0 0.5rem;
+
+      @include tablet {
+        padding: 0 0 1rem;
       }
     }
     &-address {
-      padding: 1rem 0rem;
+      padding: 1rem 0rem 1.25rem;
+      line-height: 1.375rem;
 
       @include tablet {
         padding: 1rem 0 2rem;
-        line-height: 2vw;
       }
     }
     &-email {
@@ -297,7 +312,8 @@ button {
   }
 
   &__watermark {
-    padding: 2rem 0 0.5rem;
+    padding: 2rem 0 1rem;
+    
 
     @include tablet {
       position: absolute;
@@ -312,6 +328,7 @@ button {
     }
 
     &-title {
+      font-size: 2rem;
       font-weight: 400;
 
       @include tablet {
@@ -326,15 +343,15 @@ button {
   }
 
   &__copyright {
-    font-size: 0.6875rem;
+    font-size: 1rem;
 
     @include tablet {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       padding: 3rem 0 0;
     }
 
     @include desktop {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       padding: 3rem 0 2rem;
     }
   }
