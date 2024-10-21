@@ -214,7 +214,7 @@ button {
       }
 
       &-middle {
-        padding: 0 0 1.5rem;
+        padding: 0 1rem 1.5rem 0;
 
         @include tablet {
           width: 100%;    
@@ -274,8 +274,9 @@ button {
     width: 100%;
 
     @include tablet {
-      font-size: 1.125rem;
+      font-size: 1rem;
       white-space: nowrap;
+      padding-right: 1rem;
     }
     @include desktop {
       font-size: 1.25rem;
@@ -292,7 +293,7 @@ button {
     }
 
     &-agency {
-      padding: .125rem 0 0.5rem;
+      padding: .125rem 0.5rem 0.5rem 0;
 
       @include tablet {
         padding: 0 0 1rem;
@@ -308,6 +309,10 @@ button {
     }
     &-email {
       padding: 0.25rem 0;
+      
+      @include tablet {
+        padding: 0.25rem;
+      }
     }
   }
 

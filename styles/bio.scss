@@ -13,7 +13,7 @@
     height: 100%;
     overflow: hidden;
 
-    @include flex-center(row, start);
+    @include flex-center(row, flex-start);
 
     @include desktop {
       height: 50vw;
@@ -53,7 +53,7 @@
 
     @include tablet {
       padding: 5vw;
-    } 
+    }
 
     @include desktop {
       font-size: 4.5vw;
@@ -63,7 +63,7 @@
 }
 
 .about {
-  @include flex-center(column, center, start);
+  @include flex-center(column, center, flex-start);
   padding: 1rem;
 
   @include tablet {
@@ -86,7 +86,7 @@
   }
 
   &__container {
-    @include flex-center(column, center, start);
+    @include flex-center(column, center, flex-start);
 
     @include tablet {
       padding: 1rem 3.5rem;
@@ -162,8 +162,8 @@
     @include desktop {
       gap: 3rem;
     }
-  }      
-  
+  }
+
   &__text {
     font-size: 0.8125rem;
     line-height: 1.25rem;
@@ -182,7 +182,7 @@
 }
 
 .gallery {
-  @include flex-center(column, center, start);
+  @include flex-center(column, center, flex-start);
   padding: 2rem 1rem 0.5rem;
   background-color: $color-alabaster;
 
@@ -201,7 +201,7 @@
     @include flex-center(column);
 
     @include tablet {
-      @include flex-center(row, space-between, start);
+      @include flex-center(row, space-between, flex-start);
       flex-wrap: wrap;
     }
   }
@@ -231,13 +231,14 @@
       width: 31%;
       padding: 0.75rem 0;
     }
-    
+
     @include desktop {
       transition: filter 0.5s ease, transform 0.5s ease;
       filter: grayscale(100%);
+
       &:hover {
-      filter: grayscale(0%);
-      transform: scale(1.1);
+        filter: grayscale(0%);
+        transform: scale(1.1);
       }
     }
   }
@@ -288,7 +289,7 @@
     border-radius: 50%;
     position: relative;
     padding: 0 3rem 0 0;
-    
+
     &-img {
       height: 100%;
       width: 100%;
@@ -398,14 +399,13 @@
           @include flex-center(column, space-between, flex-start);
 
           @include tablet {
-            @include flex-center(row, space-between)
+            @include flex-center(row, space-between);
           }
-        } 
+        }
       }
     }
 
     &__button-container {
-
       @include flex-center(row, space-between, center);
       width: 100%;
       flex: 1;
@@ -420,13 +420,12 @@
       @include desktop {
         max-width: 31%;
       }
-      
     }
 
     &__btn {
       @include button-style;
-        padding: 0.25rem;
-        margin: 0.25rem;
+      padding: 0.25rem;
+      margin: 0.25rem;
       @include desktop {
         margin: 0.25rem 0;
       }
@@ -436,7 +435,7 @@
           background-color: lighten($color-blue, 15%);
         }
       }
-      &--red { 
+      &--red {
         &:hover {
           background-color: darken($color-red, 5%);
         }
@@ -468,9 +467,8 @@
         padding: 1rem 0 0 0;
         top: 0.8rem;
         right: 1.75rem;
-       }
+      }
     }
-      
 
     &__posted {
       font-size: 1.25;
@@ -489,7 +487,7 @@
       max-width: 100%;
       word-wrap: break-word;
 
-      @include tablet{
+      @include tablet {
         max-width: 60%;
       }
     }

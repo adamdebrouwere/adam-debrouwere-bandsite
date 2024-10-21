@@ -52,19 +52,23 @@ class BandSiteApi {
 
   async likeComment(id) {
     try {
-        const response = await axios.put(`${this.baseUrl}comments/${id}/like?api_key=${this.apiKey}`);
+      const response = await axios.put(
+        `${this.baseUrl}comments/${id}/like?api_key=${this.apiKey}`
+      );
       return response;
     } catch (error) {
-        console.error("Error liking comment", error);
+      console.error("Error liking comment", error);
     }
   }
 
   async deleteComment(id) {
     try {
-        const response = await axios.delete(`${this.baseUrl}comments/${id}?api_key=${this.apiKey}`);
-        return response.data;
+      const response = await axios.delete(
+        `${this.baseUrl}comments/${id}?api_key=${this.apiKey}`
+      );
+      return response.data;
     } catch (error) {
-        console.error("Error deleting comment", error);
+      console.error("Error deleting comment", error);
     }
   }
 }
@@ -72,14 +76,6 @@ class BandSiteApi {
 const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
-async function getShowsData() {
-  try {
-    const showsData = await bandSiteApi.getShows();
-    console.log(showsData);
-  } catch (error) {
-    console.error("Error fetching shows data", error);
-  }
-}
 async function getCommentsData() {
   try {
     const commentsData = await bandSiteApi.getComments();
@@ -99,4 +95,14 @@ async function postCommentData(name, comment) {
     console.error("Error fetching shows data", error);
   }
 }
+
+async function getShowsData() {
+  try {
+    const showsData = await bandSiteApi.getShows();
+    console.log(showsData);
+  } catch (error) {
+    console.error("Error fetching shows data", error);
+  }
+}
+
 
