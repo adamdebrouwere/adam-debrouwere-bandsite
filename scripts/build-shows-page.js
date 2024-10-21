@@ -53,22 +53,7 @@ const loopAndAppendShows = (items) => {
     showsContainer.classList.add("shows__container");
 
     const showsContainerTop = document.createElement("div");
-    showsContainerTop.classList.add("shows__container-top");
-
-    // showsContainerTop.addEventListener("click", () => {
-    //   if (selected) {
-    //     showsContainerTop.classList.remove("shows__container-top--darken");
-    //   // }
-
-    //   // if (selected === showsContainerTop) {
-    //   //   selected = null;
-    //   // }
-    //   // else {
-    //     showsContainerTop.classList.add("shows__container-top--darken");
-    //     selected = showsContainerTop;
-    //   }
-    // });
-
+    showsContainerTop.classList.add("shows__container-top");    
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
 
@@ -87,6 +72,7 @@ const loopAndAppendShows = (items) => {
       if (isBold) {
         showsListItemContent.classList.add("shows__list-item-content--bold");
       }
+
 
       showsListItem.appendChild(showsListItemTitle);
       showsListItem.appendChild(showsListItemContent);
@@ -127,6 +113,7 @@ const loopAndAppendShows = (items) => {
 let selected = null;
 showsDisplay.addEventListener("click", (event) => {
   const clicked = event.target.closest(".shows__container-top");
+  const clicked = event.target.closest(".shows__container-top");
 
   if (clicked) {
     if (selected) {
@@ -141,9 +128,11 @@ showsDisplay.addEventListener("click", (event) => {
 
 document.addEventListener("click", (event) => {
   if (selected && !event.target.closest(".shows__container-top")) {
+  if (selected && !event.target.closest(".shows__container-top")) {
     selected.classList.remove("shows__container-top--darken");
     selected = null;
   }
+});
 });
 async function displayShows() {
   const showsData = await getShowsData();
