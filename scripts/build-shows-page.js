@@ -30,7 +30,7 @@ const loopAndAppendShows = (items) => {
   headerContainer.appendChild(headerRow);
 
   const headerDate = document.createElement("li");
-  headerDate.classList.add("shows__header-row-item")
+  headerDate.classList.add("shows__header-row-item");
   headerDate.innerText = "DATE";
   headerRow.appendChild(headerDate);
 
@@ -38,7 +38,7 @@ const loopAndAppendShows = (items) => {
   headerVenue.classList.add("shows__header-row-item");
   headerVenue.innerText = "VENUE";
   headerRow.appendChild(headerVenue);
-  
+
   const headerLocation = document.createElement("li");
   headerLocation.classList.add("shows__header-row-item");
   headerLocation.innerText = "LOCATION";
@@ -54,21 +54,7 @@ const loopAndAppendShows = (items) => {
 
     const showsContainerTop = document.createElement("div");
     showsContainerTop.classList.add("shows__container-top");
-    
-    // showsContainerTop.addEventListener("click", () => {
-    //   if (selected) {
-    //     showsContainerTop.classList.remove("shows__container-top--darken");
-    //   // } 
-      
-    //   // if (selected === showsContainerTop) {
-    //   //   selected = null;
-    //   // } 
-    //   // else {
-    //     showsContainerTop.classList.add("shows__container-top--darken");
-    //     selected = showsContainerTop;
-    //   }
-    // });
-    
+
     const showsList = document.createElement("ul");
     showsList.classList.add("shows__list");
 
@@ -87,7 +73,7 @@ const loopAndAppendShows = (items) => {
       if (isBold) {
         showsListItemContent.classList.add("shows__list-item-content--bold");
       }
-      
+
       showsListItem.appendChild(showsListItemTitle);
       showsListItem.appendChild(showsListItemContent);
 
@@ -102,7 +88,6 @@ const loopAndAppendShows = (items) => {
       hour: "2-digit",
       minute: "2-digit",
     };
-
 
     showsList.appendChild(
       createListItem("DATE", date.toLocaleString(undefined, options), true)
@@ -125,10 +110,9 @@ const loopAndAppendShows = (items) => {
   });
 };
 
-
 let selected = null;
 showsDisplay.addEventListener("click", (event) => {
-  const clicked = event.target.closest('.shows__container-top');
+  const clicked = event.target.closest(".shows__container-top");
 
   if (clicked) {
     if (selected) {
@@ -142,11 +126,11 @@ showsDisplay.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (selected && !event.target.closest('.shows__container-top')) {
+  if (selected && !event.target.closest(".shows__container-top")) {
     selected.classList.remove("shows__container-top--darken");
     selected = null;
   }
-})
+});
 async function displayShows() {
   const showsData = await getShowsData();
   loopAndAppendShows(showsData);

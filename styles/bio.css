@@ -263,7 +263,7 @@ button {
   }
 }
 .footer__container-middle {
-  padding: 0 0 1.5rem;
+  padding: 0 1rem 1.5rem 0;
 }
 @media (min-width: 48rem) {
   .footer__container-middle {
@@ -337,8 +337,9 @@ button {
 }
 @media (min-width: 48rem) {
   .footer__booking {
-    font-size: 1.125rem;
+    font-size: 1rem;
     white-space: nowrap;
+    padding-right: 1rem;
   }
 }
 @media (min-width: 80rem) {
@@ -357,7 +358,7 @@ button {
   }
 }
 .footer__booking-agency {
-  padding: 0.125rem 0 0.5rem;
+  padding: 0.125rem 0.5rem 0.5rem 0;
 }
 @media (min-width: 48rem) {
   .footer__booking-agency {
@@ -375,6 +376,11 @@ button {
 }
 .footer__booking-email {
   padding: 0.25rem 0;
+}
+@media (min-width: 48rem) {
+  .footer__booking-email {
+    padding: 0.25rem;
+  }
 }
 .footer__watermark {
   padding: 2rem 0 1rem;
@@ -435,7 +441,7 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 @media (min-width: 80rem) {
@@ -494,7 +500,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   padding: 1rem;
 }
 @media (min-width: 48rem) {
@@ -522,7 +528,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 @media (min-width: 48rem) {
   .about__container {
@@ -632,7 +638,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   padding: 2rem 1rem 0.5rem;
   background-color: #fafafa;
 }
@@ -660,7 +666,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 }
@@ -801,7 +807,7 @@ button {
   }
 }
 .conversation__name-input--error {
-  border-color: #d22d2d;
+  border: 0.125rem solid #d22d2d;
 }
 .conversation__name-input--error {
   border-color: #d22d2d;
@@ -831,7 +837,7 @@ button {
   }
 }
 .conversation__comment-input--error {
-  border-color: #d22d2d;
+  border: 0.125rem solid #d22d2d;
 }
 .conversation__comment-input--error {
   border-color: #d22d2d;

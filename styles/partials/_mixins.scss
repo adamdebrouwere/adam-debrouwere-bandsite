@@ -52,13 +52,13 @@
   font-family: "Avenir", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-
+  
   @include tablet {
     padding: 1rem;
   }
 
   &--error {
-    border-color: #d22d2d;
+    border: 0.125rem solid #d22d2d;
   }
 }
 

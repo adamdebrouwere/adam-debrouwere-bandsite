@@ -1,7 +1,9 @@
 const commentsForm = document.querySelector(".conversation__form");
 const commentPosts = document.querySelector(".conversation-post__container");
 const commentNameInput = document.querySelector(".conversation__name-input");
-const commentCommentInput = document.querySelector(".conversation__comment-input");
+const commentCommentInput = document.querySelector(
+  ".conversation__comment-input"
+);
 
 commentsForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -25,7 +27,7 @@ commentsForm.addEventListener("submit", async (event) => {
     commentCommentInput.classList.add("conversation__comment-input--error");
     alert("Please input comment");
     return;
-  } 
+  }
 
   try {
     await bandSiteApi.postComment(name, comment);
@@ -63,12 +65,14 @@ const loopAndAppend = (items) => {
       "conversation-post__content-right-bottom"
     );
     const profilePicContainer = document.createElement("div");
-    profilePicContainer.classList.add("conversation-post__profile-pic-container");
+    profilePicContainer.classList.add(
+      "conversation-post__profile-pic-container"
+    );
 
     const profilePicImg = document.createElement("img");
     profilePicImg.classList.add("conversation-post__profile-pic-img");
     profilePicImg.alt = `${item.name}'s profile picture`;
-    
+
     if (!profilePicImg.src) {
       profilePicImg.style.display = "none";
     }
@@ -85,7 +89,6 @@ const loopAndAppend = (items) => {
       timeZoneName: "short",
     };
 
-
     postedTime.innerText = date.toLocaleString(undefined, options);
 
     const name = document.createElement("p");
@@ -100,12 +103,18 @@ const loopAndAppend = (items) => {
     buttonContainer.classList.add("conversation-post__button-container");
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("conversation-post__btn", "conversation-post__btn--red");
+    deleteBtn.classList.add(
+      "conversation-post__btn",
+      "conversation-post__btn--red"
+    );
     deleteBtn.innerText = "DELETE";
     deleteBtn.setAttribute("data-id", item.id);
 
     const likeBtn = document.createElement("button");
-    likeBtn.classList.add("conversation-post__btn", "conversation-post__btn--blue");
+    likeBtn.classList.add(
+      "conversation-post__btn",
+      "conversation-post__btn--blue"
+    );
     likeBtn.innerText = "LIKE";
     likeBtn.setAttribute("data-id", item.id);
 
@@ -134,8 +143,10 @@ const loopAndAppend = (items) => {
 
     deleteBtn.addEventListener("click", async () => {
       const id = deleteBtn.getAttribute("data-id");
-      
-      const confirmed =  confirm("Are you sure you want to delete this comment?");
+
+      const confirmed = confirm(
+        "Are you sure you want to delete this comment?"
+      );
       if (!confirmed) {
         return;
       }
@@ -148,22 +159,20 @@ const loopAndAppend = (items) => {
         console.error("error deleting comment", error);
       }
     });
-    
+
     likeBtn.addEventListener("click", async () => {
-        const id = likeBtn.getAttribute("data-id");
-  
-        try {
-          await bandSiteApi.likeComment(id);
-          const updatedComments = await bandSiteApi.getComments();
-          loopAndAppend(updatedComments);
-        } catch (error) {
-          console.error("Error liking comment", error);
-        }
-      });
+      const id = likeBtn.getAttribute("data-id");
+
+      try {
+        await bandSiteApi.likeComment(id);
+        const updatedComments = await bandSiteApi.getComments();
+        loopAndAppend(updatedComments);
+      } catch (error) {
+        console.error("Error liking comment", error);
+      }
+    });
   });
 };
-
-
 
 bandSiteApi
   .getComments()
