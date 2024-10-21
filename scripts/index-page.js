@@ -1,5 +1,7 @@
 const commentsForm = document.querySelector(".conversation__form");
 const commentPosts = document.querySelector(".conversation-post__container");
+const commentNameInput = document.querySelector(".conversation__name-input");
+const commentCommentInput = document.querySelector(".conversation__comment-input");
 
 commentsForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -7,10 +9,24 @@ commentsForm.addEventListener("submit", async (event) => {
   const name = event.target.name.value;
   const comment = event.target.comment.value;
 
-  if (!(name && comment)) {
+  commentNameInput.classList.remove("conversation__name-input--error");
+  commentCommentInput.classList.remove("conversation__comment-input--error");
+
+  if (!name && !comment) {
+    commentNameInput.classList.add("conversation__name-input--error");
+    commentCommentInput.classList.add("conversation__comment-input--error");
     alert("Please input name and comment.");
     return;
-  }
+  } else if (!name) {
+    commentNameInput.classList.add("conversation__name-input--error");
+    alert("Please input name");
+    return;
+  } else if (!comment) {
+    commentCommentInput.classList.add("conversation__comment-input--error");
+    alert("Please input comment");
+    return;
+  } 
+
   try {
     await bandSiteApi.postComment(name, comment);
     const displayComment = await bandSiteApi.getComments();
@@ -25,6 +41,8 @@ commentsForm.addEventListener("submit", async (event) => {
 });
 
 const loopAndAppend = (items) => {
+  commentNameInput.classList.remove("conversation__name-input--error");
+  commentCommentInput.classList.remove("conversation__comment-input--error");
   commentPosts.innerText = "";
 
   items.forEach((item) => {

@@ -315,6 +315,10 @@
     }
     &-input {
       @include input-style;
+
+      &--error {
+        border-color: $color-red;
+      }
     }
   }
 
@@ -330,6 +334,10 @@
       @include input-style;
       resize: none;
       height: 6rem;
+
+      &--error {
+        border-color: $color-red;
+      }
     }
   }
 
@@ -425,12 +433,12 @@
 
       &--blue {
         &:hover {
-          background-color: lighten(#28D2D7, 15%);
+          background-color: lighten($color-blue, 15%);
         }
       }
       &--red { 
         &:hover {
-          background-color: darken(#ff0017, 5%);
+          background-color: darken($color-red, 5%);
         }
       }
     }

@@ -803,6 +803,9 @@ button {
 .conversation__name-input--error {
   border-color: #d22d2d;
 }
+.conversation__name-input--error {
+  border-color: #d22d2d;
+}
 .conversation__comment-header {
   color: #afafaf;
   font-size: 0.75rem;
@@ -826,6 +829,9 @@ button {
   .conversation__comment-input {
     padding: 1rem;
   }
+}
+.conversation__comment-input--error {
+  border-color: #d22d2d;
 }
 .conversation__comment-input--error {
   border-color: #d22d2d;
@@ -977,7 +983,7 @@ button {
   background-color: #69e0e3;
 }
 .conversation-post__btn--red:hover {
-  background-color: #e60015;
+  background-color: #bd2929;
 }
 .conversation-post__like-counter {
   width: 100%;
