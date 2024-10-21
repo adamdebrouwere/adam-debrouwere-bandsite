@@ -44,10 +44,16 @@ const loopAndAppend = (items) => {
     commentPostsRightBottom.classList.add(
       "conversation-post__content-right-bottom"
     );
+    const profilePicContainer = document.createElement("div");
+    profilePicContainer.classList.add("conversation-post__profile-pic-container");
 
-    const profilePic = document.createElement("img");
-    profilePic.classList.add("conversation-post__profile-pic");
-    profilePic.alt = `${item.name}'s profile picture`;
+    const profilePicImg = document.createElement("img");
+    profilePicImg.classList.add("conversation-post__profile-pic-img");
+    profilePicImg.alt = `${item.name}'s profile picture`;
+    
+    if (!profilePicImg.src) {
+      profilePicImg.style.display = "none";
+    }
 
     const postedTime = document.createElement("span");
     postedTime.classList.add("conversation-post__posted");
@@ -97,7 +103,8 @@ const loopAndAppend = (items) => {
     commentPostsContent.appendChild(commentPostsRight);
     commentPostsRight.appendChild(commentPostsRightTop);
     commentPostsRight.appendChild(commentPostsRightBottom);
-    commentPostsLeft.appendChild(profilePic);
+    profilePicContainer.appendChild(profilePicImg);
+    commentPostsLeft.appendChild(profilePicContainer);
     commentPostsRightTop.appendChild(name);
     commentPostsRightTop.appendChild(postedTime);
     commentPostsRightBottom.appendChild(comment);
@@ -137,6 +144,8 @@ const loopAndAppend = (items) => {
       });
   });
 };
+
+
 
 bandSiteApi
   .getComments()

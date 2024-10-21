@@ -57,7 +57,7 @@
     overflow: hidden;
 
     @include tablet {
-      @include flex-center(column, space-around, flex-start);
+      @include flex-center(column, center, flex-start);
       padding: 2rem 4vw;
     }
     @include desktop {
@@ -111,8 +111,7 @@
 
     @include tablet {
       width: 60%;
-      height: 40%;
-      padding: 0;
+      height: 25%;
     }
 
     @include desktop {

@@ -117,12 +117,12 @@ button {
 }
 @media (min-width: 48rem) {
   .navbar {
-    height: 10vw;
+    height: 9rem;
   }
 }
 @media (min-width: 80rem) {
   .navbar {
-    height: 6vw;
+    height: 7rem;
   }
 }
 .navbar__container {
@@ -753,16 +753,26 @@ button {
   align-items: flex-start;
 }
 .conversation__profile {
-  padding: 0 0.25rem;
-}
-.conversation__profile-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  position: relative;
+  padding: 0 3rem 0 0;
+}
+.conversation__profile-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
-  position: right;
-  transform: translateY(2rem);
+  top: 2.5rem;
+  left: 0;
 }
 .conversation-comment__container {
   width: 100%;
@@ -790,6 +800,9 @@ button {
     padding: 1rem;
   }
 }
+.conversation__name-input--error {
+  border-color: #d22d2d;
+}
 .conversation__comment-header {
   color: #afafaf;
   font-size: 0.75rem;
@@ -813,6 +826,9 @@ button {
   .conversation__comment-input {
     padding: 1rem;
   }
+}
+.conversation__comment-input--error {
+  border-color: #d22d2d;
 }
 .conversation__submit {
   padding: 0.75rem 0 0;
@@ -978,7 +994,7 @@ button {
     padding: 1rem 3.25rem;
   }
 }
-.conversation-post__profile-pic {
+.conversation-post__profile-pic-container {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

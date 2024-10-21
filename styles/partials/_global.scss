@@ -94,11 +94,11 @@ button {
   width: 100%;
 
   @include tablet {
-    height: 10vw;
+    height: 9rem;
   }
 
   @include desktop {
-    height: 6vw;
+    height: 7rem;
   }
 
   &__container {

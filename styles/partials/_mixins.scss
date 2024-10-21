@@ -56,6 +56,10 @@
   @include tablet {
     padding: 1rem;
   }
+
+  &--error {
+    border-color: #d22d2d;
+  }
 }
 
 @mixin line-break {
